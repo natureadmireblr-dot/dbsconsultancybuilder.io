@@ -6,6 +6,7 @@ const sustainabilityImg = "https://images.pexels.com/photos/27243718/pexels-phot
 const cloudImg = "https://images.pexels.com/photos/1181316/pexels-photo-1181316.jpeg";
 const tourismImg = "https://images.pexels.com/photos/17231775/pexels-photo-17231775.jpeg";
 const wellnessImg = "https://images.pexels.com/photos/31234753/pexels-photo-31234753.jpeg";
+const cloudOpsImg = "https://images.pexels.com/photos/5480781/pexels-photo-5480781.jpeg";
 
 export default function Index() {
   const pillars = [
@@ -237,7 +238,7 @@ export default function Index() {
             </div>
 
             <div className="bg-gradient-to-br from-white to-primary/5 rounded-lg overflow-hidden border border-border hover:border-primary hover:shadow-lg transition-all">
-              <img src={wellnessImg} alt="Wellness" className="w-full h-48 object-cover" />
+              <img src={cloudOpsImg} alt="Cloud Platform Operations" className="w-full h-48 object-cover" />
               <div className="p-6">
                 <h3 className="text-lg font-semibold text-foreground mb-3">
                   Cloud Platform Operations
