@@ -2,6 +2,12 @@ import Navigation from "@/components/Navigation";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 
+const sustainabilityImg = "https://images.pexels.com/photos/27243718/pexels-photo-27243718.jpeg";
+const cloudImg = "https://images.pexels.com/photos/1181316/pexels-photo-1181316.jpeg";
+const tourismImg = "https://images.pexels.com/photos/17231775/pexels-photo-17231775.jpeg";
+const wellnessImg = "https://images.pexels.com/photos/31234753/pexels-photo-31234753.jpeg";
+const businessImg = "https://images.pexels.com/photos/6289060/pexels-photo-6289060.jpeg";
+
 export default function Services() {
   return (
     <div className="min-h-screen bg-background">
@@ -25,59 +31,74 @@ export default function Services() {
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-gray-50">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg p-8 border-2 border-blue-200 hover:border-blue-400 hover:shadow-lg transition-all">
-              <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-4">
-                <span className="text-white text-xl">⚡</span>
+            <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg overflow-hidden border-2 border-blue-200 hover:border-blue-400 hover:shadow-lg transition-all">
+              <img src={sustainabilityImg} alt="Digital Business & ESG" className="w-full h-48 object-cover" />
+              <div className="p-8">
+                <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-4">
+                  <span className="text-white text-xl">⚡</span>
+                </div>
+                <h3 className="text-2xl font-bold text-blue-900 mb-4">Digital Business & ESG</h3>
+                <p className="text-blue-700 mb-4">Carbon optimization and green tech solutions for the digital economy.</p>
+                <Link to="/contact" className="inline-flex items-center gap-2 text-blue-600 font-semibold hover:gap-3 transition-all">
+                  Learn More <ArrowRight className="w-4 h-4" />
+                </Link>
               </div>
-              <h3 className="text-2xl font-bold text-blue-900 mb-4">Digital Business & ESG</h3>
-              <p className="text-blue-700 mb-4">Carbon optimization and green tech solutions for the digital economy.</p>
-              <Link to="/contact" className="inline-flex items-center gap-2 text-blue-600 font-semibold hover:gap-3 transition-all">
-                Learn More <ArrowRight className="w-4 h-4" />
-              </Link>
             </div>
 
-            <div className="bg-gradient-to-br from-purple-50 to-purple-100 rounded-lg p-8 border-2 border-purple-200 hover:border-purple-400 hover:shadow-lg transition-all">
-              <div className="w-12 h-12 bg-purple-600 rounded-lg flex items-center justify-center mb-4">
-                <span className="text-white text-xl">☁️</span>
+            <div className="bg-gradient-to-br from-purple-50 to-purple-100 rounded-lg overflow-hidden border-2 border-purple-200 hover:border-purple-400 hover:shadow-lg transition-all">
+              <img src={cloudImg} alt="IT & Cloud Solutions" className="w-full h-48 object-cover" />
+              <div className="p-8">
+                <div className="w-12 h-12 bg-purple-600 rounded-lg flex items-center justify-center mb-4">
+                  <span className="text-white text-xl">☁️</span>
+                </div>
+                <h3 className="text-2xl font-bold text-purple-900 mb-4">IT & Cloud Solutions</h3>
+                <p className="text-purple-700 mb-4">Scalable cloud architecture, SaaS, and AI development services.</p>
+                <Link to="/contact" className="inline-flex items-center gap-2 text-purple-600 font-semibold hover:gap-3 transition-all">
+                  Learn More <ArrowRight className="w-4 h-4" />
+                </Link>
               </div>
-              <h3 className="text-2xl font-bold text-purple-900 mb-4">IT & Cloud Solutions</h3>
-              <p className="text-purple-700 mb-4">Scalable cloud architecture, SaaS, and AI development services.</p>
-              <Link to="/contact" className="inline-flex items-center gap-2 text-purple-600 font-semibold hover:gap-3 transition-all">
-                Learn More <ArrowRight className="w-4 h-4" />
-              </Link>
             </div>
 
-            <div className="bg-gradient-to-br from-green-50 to-green-100 rounded-lg p-8 border-2 border-green-200 hover:border-green-400 hover:shadow-lg transition-all">
-              <div className="w-12 h-12 bg-green-600 rounded-lg flex items-center justify-center mb-4">
-                <span className="text-white text-xl">🏔️</span>
+            <div className="bg-gradient-to-br from-green-50 to-green-100 rounded-lg overflow-hidden border-2 border-green-200 hover:border-green-400 hover:shadow-lg transition-all">
+              <img src={tourismImg} alt="Adventure & Eco-Tourism" className="w-full h-48 object-cover" />
+              <div className="p-8">
+                <div className="w-12 h-12 bg-green-600 rounded-lg flex items-center justify-center mb-4">
+                  <span className="text-white text-xl">🏔️</span>
+                </div>
+                <h3 className="text-2xl font-bold text-green-900 mb-4">Adventure & Eco-Tourism</h3>
+                <p className="text-green-700 mb-4">Smart, sustainable destination development and planning.</p>
+                <Link to="/contact" className="inline-flex items-center gap-2 text-green-600 font-semibold hover:gap-3 transition-all">
+                  Learn More <ArrowRight className="w-4 h-4" />
+                </Link>
               </div>
-              <h3 className="text-2xl font-bold text-green-900 mb-4">Adventure & Eco-Tourism</h3>
-              <p className="text-green-700 mb-4">Smart, sustainable destination development and planning.</p>
-              <Link to="/contact" className="inline-flex items-center gap-2 text-green-600 font-semibold hover:gap-3 transition-all">
-                Learn More <ArrowRight className="w-4 h-4" />
-              </Link>
             </div>
 
-            <div className="bg-gradient-to-br from-pink-50 to-pink-100 rounded-lg p-8 border-2 border-pink-200 hover:border-pink-400 hover:shadow-lg transition-all">
-              <div className="w-12 h-12 bg-pink-600 rounded-lg flex items-center justify-center mb-4">
-                <span className="text-white text-xl">🧘</span>
+            <div className="bg-gradient-to-br from-pink-50 to-pink-100 rounded-lg overflow-hidden border-2 border-pink-200 hover:border-pink-400 hover:shadow-lg transition-all">
+              <img src={wellnessImg} alt="Wellness Tourism" className="w-full h-48 object-cover" />
+              <div className="p-8">
+                <div className="w-12 h-12 bg-pink-600 rounded-lg flex items-center justify-center mb-4">
+                  <span className="text-white text-xl">🧘</span>
+                </div>
+                <h3 className="text-2xl font-bold text-pink-900 mb-4">Wellness Tourism</h3>
+                <p className="text-pink-700 mb-4">End-to-end resort facilitation and expert manpower supply.</p>
+                <Link to="/contact" className="inline-flex items-center gap-2 text-pink-600 font-semibold hover:gap-3 transition-all">
+                  Learn More <ArrowRight className="w-4 h-4" />
+                </Link>
               </div>
-              <h3 className="text-2xl font-bold text-pink-900 mb-4">Wellness Tourism</h3>
-              <p className="text-pink-700 mb-4">End-to-end resort facilitation and expert manpower supply.</p>
-              <Link to="/contact" className="inline-flex items-center gap-2 text-pink-600 font-semibold hover:gap-3 transition-all">
-                Learn More <ArrowRight className="w-4 h-4" />
-              </Link>
             </div>
 
-            <div className="bg-gradient-to-br from-amber-50 to-amber-100 rounded-lg p-8 border-2 border-amber-200 hover:border-amber-400 hover:shadow-lg transition-all md:col-span-2 lg:col-span-2">
-              <div className="w-12 h-12 bg-amber-600 rounded-lg flex items-center justify-center mb-4">
-                <span className="text-white text-xl">📈</span>
+            <div className="bg-gradient-to-br from-amber-50 to-amber-100 rounded-lg overflow-hidden border-2 border-amber-200 hover:border-amber-400 hover:shadow-lg transition-all md:col-span-2 lg:col-span-2">
+              <img src={businessImg} alt="Strategic Business Development" className="w-full h-48 object-cover" />
+              <div className="p-8">
+                <div className="w-12 h-12 bg-amber-600 rounded-lg flex items-center justify-center mb-4">
+                  <span className="text-white text-xl">📈</span>
+                </div>
+                <h3 className="text-2xl font-bold text-amber-900 mb-4">Strategic Business Development</h3>
+                <p className="text-amber-700 mb-4">Growth strategies, lifecycle support, and digital transformation for enterprises.</p>
+                <Link to="/contact" className="inline-flex items-center gap-2 text-amber-600 font-semibold hover:gap-3 transition-all">
+                  Learn More <ArrowRight className="w-4 h-4" />
+                </Link>
               </div>
-              <h3 className="text-2xl font-bold text-amber-900 mb-4">Strategic Business Development</h3>
-              <p className="text-amber-700 mb-4">Growth strategies, lifecycle support, and digital transformation for enterprises.</p>
-              <Link to="/contact" className="inline-flex items-center gap-2 text-amber-600 font-semibold hover:gap-3 transition-all">
-                Learn More <ArrowRight className="w-4 h-4" />
-              </Link>
             </div>
           </div>
         </div>
