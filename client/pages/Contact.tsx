@@ -71,7 +71,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-foreground">Email</h3>
-                    <p className="text-muted-foreground">hello@dbsconsultancy.com</p>
+                    <p className="text-muted-foreground">devbalaji@natureadmire.in</p>
                   </div>
                 </div>
 
@@ -81,7 +81,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-foreground">Phone</h3>
-                    <p className="text-muted-foreground">+1 (555) 000-0000</p>
+                    <p className="text-muted-foreground">+91 - 8618751811 / 9845079414</p>
                   </div>
                 </div>
 
@@ -92,7 +92,7 @@ export default function Contact() {
                   <div>
                     <h3 className="font-semibold text-foreground">Office</h3>
                     <p className="text-muted-foreground">
-                      Multiple locations worldwide
+                      Wework, 10th floor, RMZ Latitude commercial, Amruthahalli, Hebbal, Bengaluru -560024, Karnataka, India
                     </p>
                   </div>
                 </div>
