@@ -2,6 +2,11 @@ import Navigation from "@/components/Navigation";
 import { ArrowRight, Leaf, Zap, Users, TrendingUp, Globe } from "lucide-react";
 import { Link } from "react-router-dom";
 
+const sustainabilityImg = "https://images.pexels.com/photos/27243718/pexels-photo-27243718.jpeg";
+const cloudImg = "https://images.pexels.com/photos/1181316/pexels-photo-1181316.jpeg";
+const tourismImg = "https://images.pexels.com/photos/17231775/pexels-photo-17231775.jpeg";
+const wellnessImg = "https://images.pexels.com/photos/31234753/pexels-photo-31234753.jpeg";
+
 export default function Index() {
   const pillars = [
     {
@@ -70,27 +75,27 @@ export default function Index() {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-background via-background to-primary/5">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-primary via-secondary to-accent">
         <div className="max-w-7xl mx-auto">
           <div className="text-center max-w-3xl mx-auto">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
               Bridging Sustainability, Technology, Conservation, and Business
               Growth
             </h1>
-            <p className="text-lg sm:text-xl text-muted-foreground mb-8">
+            <p className="text-lg sm:text-xl text-white/90 mb-8">
               Evidence-based consulting that delivers measurable environmental
               and economic impact across the digital and physical worlds.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 to="/contact"
-                className="px-8 py-4 bg-primary text-primary-foreground rounded-lg font-semibold hover:bg-primary/90 transition-colors flex items-center justify-center gap-2"
+                className="px-8 py-4 bg-white text-primary rounded-lg font-semibold hover:bg-gray-100 transition-colors flex items-center justify-center gap-2"
               >
                 Start Your Transformation <ArrowRight className="w-4 h-4" />
               </Link>
               <Link
                 to="/about"
-                className="px-8 py-4 bg-white border-2 border-primary text-primary rounded-lg font-semibold hover:bg-primary/5 transition-colors"
+                className="px-8 py-4 bg-transparent border-2 border-white text-white rounded-lg font-semibold hover:bg-white/10 transition-colors"
               >
                 Learn Our Story
               </Link>
@@ -125,7 +130,7 @@ export default function Index() {
       </section>
 
       {/* Five Core Pillars */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-muted/40">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-muted/40 to-white">
         <div className="max-w-7xl mx-auto">
           <div className="mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
@@ -137,13 +142,21 @@ export default function Index() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
             {pillars.map((pillar, idx) => {
               const IconComponent = pillar.icon;
+              const colors = [
+                { bg: "bg-blue-50", icon: "text-blue-600", border: "border-blue-200 hover:border-blue-400" },
+                { bg: "bg-purple-50", icon: "text-purple-600", border: "border-purple-200 hover:border-purple-400" },
+                { bg: "bg-green-50", icon: "text-green-600", border: "border-green-200 hover:border-green-400" },
+                { bg: "bg-pink-50", icon: "text-pink-600", border: "border-pink-200 hover:border-pink-400" },
+                { bg: "bg-amber-50", icon: "text-amber-600", border: "border-amber-200 hover:border-amber-400" },
+              ];
+              const color = colors[idx];
               return (
                 <div
                   key={idx}
-                  className="bg-white rounded-lg p-6 border border-border hover:border-primary hover:shadow-lg transition-all"
+                  className={`${color.bg} rounded-lg p-6 border-2 ${color.border} hover:shadow-lg transition-all`}
                 >
-                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-                    <IconComponent className="w-6 h-6 text-primary" />
+                  <div className={`w-12 h-12 bg-white rounded-lg flex items-center justify-center mb-4`}>
+                    <IconComponent className={`w-6 h-6 ${color.icon}`} />
                   </div>
                   <h3 className="text-lg font-semibold text-foreground mb-2">
                     {pillar.title}
@@ -169,16 +182,14 @@ export default function Index() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-            {services.map((service, idx) => (
-              <div
-                key={idx}
-                className="bg-gradient-to-br from-white to-primary/5 rounded-lg p-6 border border-border hover:border-primary hover:shadow-lg transition-all"
-              >
+            <div className="bg-gradient-to-br from-white to-primary/5 rounded-lg overflow-hidden border border-border hover:border-primary hover:shadow-lg transition-all">
+              <img src={sustainabilityImg} alt="Sustainability" className="w-full h-48 object-cover" />
+              <div className="p-6">
                 <h3 className="text-lg font-semibold text-foreground mb-3">
-                  {service.title}
+                  Digital Carbon Footprint Assessment
                 </h3>
                 <p className="text-sm text-muted-foreground mb-4">
-                  {service.description}
+                  Comprehensive measurement of carbon emissions from cloud infrastructure, website hosting, and digital product usage.
                 </p>
                 <Link
                   to="/services"
@@ -187,7 +198,61 @@ export default function Index() {
                   Learn More <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
-            ))}
+            </div>
+
+            <div className="bg-gradient-to-br from-white to-secondary/5 rounded-lg overflow-hidden border border-border hover:border-secondary hover:shadow-lg transition-all">
+              <img src={cloudImg} alt="Cloud Infrastructure" className="w-full h-48 object-cover" />
+              <div className="p-6">
+                <h3 className="text-lg font-semibold text-foreground mb-3">
+                  Green Cloud Architecture Review
+                </h3>
+                <p className="text-sm text-muted-foreground mb-4">
+                  Technical audits of AWS, Azure, and GCP infrastructure to right-size resources and optimize for both carbon and cost reductions.
+                </p>
+                <Link
+                  to="/services"
+                  className="inline-flex items-center gap-2 text-secondary font-semibold text-sm hover:gap-3 transition-all"
+                >
+                  Learn More <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
+            </div>
+
+            <div className="bg-gradient-to-br from-white to-accent/10 rounded-lg overflow-hidden border border-border hover:border-accent hover:shadow-lg transition-all">
+              <img src={tourismImg} alt="Eco-Tourism" className="w-full h-48 object-cover" />
+              <div className="p-6">
+                <h3 className="text-lg font-semibold text-foreground mb-3">
+                  ESG Strategy & Reporting
+                </h3>
+                <p className="text-sm text-muted-foreground mb-4">
+                  Design and implementation of data collection systems aligned with global frameworks for pre-IPO startups and enterprise clients.
+                </p>
+                <Link
+                  to="/services"
+                  className="inline-flex items-center gap-2 text-accent font-semibold text-sm hover:gap-3 transition-all"
+                >
+                  Learn More <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
+            </div>
+
+            <div className="bg-gradient-to-br from-white to-primary/5 rounded-lg overflow-hidden border border-border hover:border-primary hover:shadow-lg transition-all">
+              <img src={wellnessImg} alt="Wellness" className="w-full h-48 object-cover" />
+              <div className="p-6">
+                <h3 className="text-lg font-semibold text-foreground mb-3">
+                  Cloud Platform Operations
+                </h3>
+                <p className="text-sm text-muted-foreground mb-4">
+                  Implementation and management of AWS and Azure stacks with high-availability distributed systems.
+                </p>
+                <Link
+                  to="/services"
+                  className="inline-flex items-center gap-2 text-primary font-semibold text-sm hover:gap-3 transition-all"
+                >
+                  Learn More <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
+            </div>
           </div>
 
           <div className="text-center">
@@ -202,7 +267,7 @@ export default function Index() {
       </section>
 
       {/* Target Industries */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-secondary/5">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-blue-50 via-purple-50 to-pink-50">
         <div className="max-w-7xl mx-auto">
           <div className="mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
@@ -212,17 +277,26 @@ export default function Index() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
-            {industries.map((industry, idx) => (
-              <div
-                key={idx}
-                className="bg-white rounded-lg p-6 border border-border hover:border-primary hover:shadow-lg transition-all text-center"
-              >
-                <div className="text-4xl mb-3">{industry.icon}</div>
-                <h3 className="font-semibold text-foreground">
-                  {industry.name}
-                </h3>
-              </div>
-            ))}
+            {industries.map((industry, idx) => {
+              const bgColors = [
+                "bg-gradient-to-br from-blue-100 to-blue-50 border-blue-200 hover:border-blue-400",
+                "bg-gradient-to-br from-purple-100 to-purple-50 border-purple-200 hover:border-purple-400",
+                "bg-gradient-to-br from-green-100 to-green-50 border-green-200 hover:border-green-400",
+                "bg-gradient-to-br from-pink-100 to-pink-50 border-pink-200 hover:border-pink-400",
+                "bg-gradient-to-br from-amber-100 to-amber-50 border-amber-200 hover:border-amber-400",
+              ];
+              return (
+                <div
+                  key={idx}
+                  className={`${bgColors[idx]} rounded-lg p-6 border-2 hover:shadow-lg transition-all text-center`}
+                >
+                  <div className="text-5xl mb-3">{industry.icon}</div>
+                  <h3 className="font-semibold text-foreground text-sm">
+                    {industry.name}
+                  </h3>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>

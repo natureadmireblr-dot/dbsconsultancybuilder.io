@@ -1,7 +1,9 @@
 import Navigation from "@/components/Navigation";
 import { Link } from "react-router-dom";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Phone, MapPin, Zap, Cloud, Users, TrendingUp } from "lucide-react";
 import { useState } from "react";
+
+const contactImageUrl = "https://images.pexels.com/photos/6289060/pexels-photo-6289060.jpeg";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -43,15 +45,24 @@ export default function Contact() {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-background via-background to-primary/5">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-primary via-secondary to-accent">
         <div className="max-w-7xl mx-auto">
-          <div className="max-w-3xl">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">
-              Get in Touch
-            </h1>
-            <p className="text-lg sm:text-xl text-muted-foreground">
-              Let's discuss how we can help your organization achieve measurable impact.
-            </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div>
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+                Get in Touch
+              </h1>
+              <p className="text-lg sm:text-xl text-white/90">
+                Let's discuss how we can help your organization achieve measurable impact.
+              </p>
+            </div>
+            <div className="hidden md:block">
+              <img
+                src={contactImageUrl}
+                alt="Business growth and success"
+                className="rounded-lg shadow-lg"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -101,28 +112,28 @@ export default function Contact() {
               {/* Service Categories */}
               <div className="mt-12">
                 <h3 className="text-lg font-bold text-foreground mb-4">Service Categories</h3>
-                <ul className="space-y-3 text-sm">
-                  <li className="flex items-start gap-3">
-                    <span className="text-primary font-bold">•</span>
-                    <span className="text-muted-foreground">ESG, Carbon Audits & Digital Sustainability</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="text-primary font-bold">•</span>
-                    <span className="text-muted-foreground">IT Infrastructure & Cloud Services</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="text-primary font-bold">•</span>
-                    <span className="text-muted-foreground">Tourism Destination & Adventure Planning</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="text-primary font-bold">•</span>
-                    <span className="text-muted-foreground">Wellness Resort Setup & Manpower</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="text-primary font-bold">•</span>
-                    <span className="text-muted-foreground">Business Strategy & Registration</span>
-                  </li>
-                </ul>
+                <div className="space-y-3">
+                  <div className="flex items-start gap-3 p-3 bg-primary/10 rounded-lg">
+                    <Zap className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
+                    <span className="text-sm text-foreground">ESG, Carbon Audits & Digital Sustainability</span>
+                  </div>
+                  <div className="flex items-start gap-3 p-3 bg-secondary/10 rounded-lg">
+                    <Cloud className="w-5 h-5 text-secondary flex-shrink-0 mt-1" />
+                    <span className="text-sm text-foreground">IT Infrastructure & Cloud Services</span>
+                  </div>
+                  <div className="flex items-start gap-3 p-3 bg-accent/20 rounded-lg">
+                    <MapPin className="w-5 h-5 text-accent flex-shrink-0 mt-1" />
+                    <span className="text-sm text-foreground">Tourism Destination & Adventure Planning</span>
+                  </div>
+                  <div className="flex items-start gap-3 p-3 bg-primary/10 rounded-lg">
+                    <Users className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
+                    <span className="text-sm text-foreground">Wellness Resort Setup & Manpower</span>
+                  </div>
+                  <div className="flex items-start gap-3 p-3 bg-secondary/10 rounded-lg">
+                    <TrendingUp className="w-5 h-5 text-secondary flex-shrink-0 mt-1" />
+                    <span className="text-sm text-foreground">Business Strategy & Registration</span>
+                  </div>
+                </div>
               </div>
             </div>
 

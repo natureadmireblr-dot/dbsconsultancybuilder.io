@@ -46,13 +46,13 @@ export default function About() {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-background via-background to-primary/5">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-primary via-secondary to-accent">
         <div className="max-w-7xl mx-auto">
           <div className="max-w-3xl">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
               25+ Years of Building Sustainable Ecosystems
             </h1>
-            <p className="text-lg sm:text-xl text-muted-foreground">
+            <p className="text-lg sm:text-xl text-white/90">
               The DBS Journey
             </p>
           </div>
@@ -74,7 +74,7 @@ export default function About() {
       </section>
 
       {/* Why Us */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-muted/40">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-blue-50 via-purple-50 to-pink-50">
         <div className="max-w-7xl mx-auto">
           <div className="mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
@@ -85,8 +85,8 @@ export default function About() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="space-y-4">
-              <div className="flex gap-4">
-                <Check className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
+              <div className="flex gap-4 p-4 bg-white rounded-lg border-l-4 border-blue-500">
+                <Check className="w-6 h-6 text-blue-600 flex-shrink-0 mt-1" />
                 <div>
                   <h3 className="font-semibold text-foreground mb-2">
                     Unique Expertise Combination
@@ -96,8 +96,8 @@ export default function About() {
                   </p>
                 </div>
               </div>
-              <div className="flex gap-4">
-                <Check className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
+              <div className="flex gap-4 p-4 bg-white rounded-lg border-l-4 border-purple-500">
+                <Check className="w-6 h-6 text-purple-600 flex-shrink-0 mt-1" />
                 <div>
                   <h3 className="font-semibold text-foreground mb-2">
                     Proven Track Record
@@ -107,8 +107,8 @@ export default function About() {
                   </p>
                 </div>
               </div>
-              <div className="flex gap-4">
-                <Check className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
+              <div className="flex gap-4 p-4 bg-white rounded-lg border-l-4 border-green-500">
+                <Check className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" />
                 <div>
                   <h3 className="font-semibold text-foreground mb-2">
                     End-to-End Solutions
@@ -121,8 +121,8 @@ export default function About() {
             </div>
 
             <div className="space-y-4">
-              <div className="flex gap-4">
-                <Check className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
+              <div className="flex gap-4 p-4 bg-white rounded-lg border-l-4 border-pink-500">
+                <Check className="w-6 h-6 text-pink-600 flex-shrink-0 mt-1" />
                 <div>
                   <h3 className="font-semibold text-foreground mb-2">
                     Proprietary Methodology
@@ -132,8 +132,8 @@ export default function About() {
                   </p>
                 </div>
               </div>
-              <div className="flex gap-4">
-                <Check className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
+              <div className="flex gap-4 p-4 bg-white rounded-lg border-l-4 border-amber-500">
+                <Check className="w-6 h-6 text-amber-600 flex-shrink-0 mt-1" />
                 <div>
                   <h3 className="font-semibold text-foreground mb-2">
                     Government & Enterprise Trust
@@ -143,8 +143,8 @@ export default function About() {
                   </p>
                 </div>
               </div>
-              <div className="flex gap-4">
-                <Check className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
+              <div className="flex gap-4 p-4 bg-white rounded-lg border-l-4 border-cyan-500">
+                <Check className="w-6 h-6 text-cyan-600 flex-shrink-0 mt-1" />
                 <div>
                   <h3 className="font-semibold text-foreground mb-2">
                     Measurable Results
@@ -160,7 +160,7 @@ export default function About() {
       </section>
 
       {/* SUSTAIN Framework */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
@@ -173,22 +173,34 @@ export default function About() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-7 gap-4">
-            {sustainFramework.map((item, idx) => (
-              <div
-                key={idx}
-                className="bg-white border border-border rounded-lg p-6 hover:border-primary hover:shadow-lg transition-all"
-              >
-                <div className="w-12 h-12 bg-primary text-primary-foreground rounded-lg flex items-center justify-center mb-4 font-bold text-lg">
-                  {item.letter}
+            {sustainFramework.map((item, idx) => {
+              const colors = [
+                { bg: "bg-blue-50", border: "border-blue-200 hover:border-blue-400", text: "text-blue-700", badge: "bg-blue-600 text-white" },
+                { bg: "bg-purple-50", border: "border-purple-200 hover:border-purple-400", text: "text-purple-700", badge: "bg-purple-600 text-white" },
+                { bg: "bg-green-50", border: "border-green-200 hover:border-green-400", text: "text-green-700", badge: "bg-green-600 text-white" },
+                { bg: "bg-pink-50", border: "border-pink-200 hover:border-pink-400", text: "text-pink-700", badge: "bg-pink-600 text-white" },
+                { bg: "bg-amber-50", border: "border-amber-200 hover:border-amber-400", text: "text-amber-700", badge: "bg-amber-600 text-white" },
+                { bg: "bg-cyan-50", border: "border-cyan-200 hover:border-cyan-400", text: "text-cyan-700", badge: "bg-cyan-600 text-white" },
+                { bg: "bg-red-50", border: "border-red-200 hover:border-red-400", text: "text-red-700", badge: "bg-red-600 text-white" },
+              ];
+              const color = colors[idx];
+              return (
+                <div
+                  key={idx}
+                  className={`${color.bg} border-2 ${color.border} rounded-lg p-6 hover:shadow-lg transition-all`}
+                >
+                  <div className={`w-12 h-12 ${color.badge} rounded-lg flex items-center justify-center mb-4 font-bold text-lg`}>
+                    {item.letter}
+                  </div>
+                  <h3 className={`font-semibold ${color.text} mb-2 text-sm`}>
+                    {item.title}
+                  </h3>
+                  <p className="text-xs text-muted-foreground">
+                    {item.description}
+                  </p>
                 </div>
-                <h3 className="font-semibold text-foreground mb-2 text-sm">
-                  {item.title}
-                </h3>
-                <p className="text-xs text-muted-foreground">
-                  {item.description}
-                </p>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
