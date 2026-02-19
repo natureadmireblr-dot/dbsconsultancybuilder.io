@@ -1,62 +1,332 @@
-import { DemoResponse } from "@shared/api";
-import { useEffect, useState } from "react";
+import Navigation from "@/components/Navigation";
+import { ArrowRight, Leaf, Zap, Users, TrendingUp, Globe } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function Index() {
-  const [exampleFromServer, setExampleFromServer] = useState("");
-  // Fetch users on component mount
-  useEffect(() => {
-    fetchDemo();
-  }, []);
+  const pillars = [
+    {
+      title: "Digital Business & ESG",
+      description:
+        "Carbon optimization and green tech for the digital economy.",
+      icon: Zap,
+    },
+    {
+      title: "IT & Cloud Solutions",
+      description:
+        "Scalable cloud architecture, SaaS, and AI development.",
+      icon: Globe,
+    },
+    {
+      title: "Adventure & Eco-Tourism",
+      description: "Smart, sustainable destination development.",
+      icon: Leaf,
+    },
+    {
+      title: "Wellness Tourism",
+      description: "End-to-end resort facilitation and expert manpower supply.",
+      icon: Users,
+    },
+    {
+      title: "Business Development",
+      description:
+        "Strategic lifecycle support for Micro to Macro enterprises.",
+      icon: TrendingUp,
+    },
+  ];
 
-  // Example of how to fetch data from the server (if needed)
-  const fetchDemo = async () => {
-    try {
-      const response = await fetch("/api/demo");
-      const data = (await response.json()) as DemoResponse;
-      setExampleFromServer(data.message);
-    } catch (error) {
-      console.error("Error fetching hello:", error);
-    }
-  };
+  const services = [
+    {
+      title: "Digital Carbon Footprint Assessment",
+      description:
+        "Comprehensive measurement of carbon emissions from cloud infrastructure, website hosting, and digital product usage.",
+    },
+    {
+      title: "Green Cloud Architecture Review",
+      description:
+        "Technical audits of AWS, Azure, and GCP infrastructure to right-size resources and optimize for both carbon and cost reductions.",
+    },
+    {
+      title: "ESG Strategy & Reporting",
+      description:
+        "Design and implementation of data collection systems aligned with global frameworks for pre-IPO startups and enterprise clients.",
+    },
+    {
+      title: "Cloud Platform Operations",
+      description:
+        "Implementation and management of AWS and Azure stacks with high-availability distributed systems.",
+    },
+  ];
+
+  const industries = [
+    { name: "SaaS & Cloud Software", icon: "💻" },
+    { name: "E-commerce & D2C Brands", icon: "📦" },
+    { name: "Tech Startups", icon: "🚀" },
+    { name: "Hospitality & Real Estate", icon: "🏨" },
+    { name: "Government & Public Sector", icon: "🏛️" },
+  ];
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-100 to-slate-200">
-      <div className="text-center">
-        {/* TODO: FUSION_GENERATION_APP_PLACEHOLDER replace everything here with the actual app! */}
-        <h1 className="text-2xl font-semibold text-slate-800 flex items-center justify-center gap-3">
-          <svg
-            className="animate-spin h-8 w-8 text-slate-400"
-            viewBox="0 0 50 50"
+    <div className="min-h-screen bg-background">
+      <Navigation />
+
+      {/* Hero Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-background via-background to-primary/5">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center max-w-3xl mx-auto">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">
+              Bridging Sustainability, Technology, Conservation, and Business
+              Growth
+            </h1>
+            <p className="text-lg sm:text-xl text-muted-foreground mb-8">
+              Evidence-based consulting that delivers measurable environmental
+              and economic impact across the digital and physical worlds.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link
+                to="/contact"
+                className="px-8 py-4 bg-primary text-primary-foreground rounded-lg font-semibold hover:bg-primary/90 transition-colors flex items-center justify-center gap-2"
+              >
+                Start Your Transformation <ArrowRight className="w-4 h-4" />
+              </Link>
+              <Link
+                to="/about"
+                className="px-8 py-4 bg-white border-2 border-primary text-primary rounded-lg font-semibold hover:bg-primary/5 transition-colors"
+              >
+                Learn Our Story
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* DBS Advantage Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
+              The DBS Advantage
+            </h2>
+            <div className="h-1 w-24 bg-primary rounded-full"></div>
+          </div>
+
+          <div className="bg-white border border-border rounded-lg p-8 sm:p-12">
+            <p className="text-lg text-foreground leading-relaxed">
+              We are the only consultancy practice that combines deep
+              sustainability expertise with AI, big data, and cloud
+              infrastructure capabilities to help businesses grow profitably
+              while meeting their environmental commitments.{" "}
+              <span className="font-semibold">
+                We do not just advise; we build tech-enabled solutions and
+                physical infrastructure that drive measurable impact.
+              </span>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Five Core Pillars */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-muted/40">
+        <div className="max-w-7xl mx-auto">
+          <div className="mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
+              Our Five Core Pillars
+            </h2>
+            <div className="h-1 w-24 bg-primary rounded-full"></div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+            {pillars.map((pillar, idx) => {
+              const IconComponent = pillar.icon;
+              return (
+                <div
+                  key={idx}
+                  className="bg-white rounded-lg p-6 border border-border hover:border-primary hover:shadow-lg transition-all"
+                >
+                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                    <IconComponent className="w-6 h-6 text-primary" />
+                  </div>
+                  <h3 className="text-lg font-semibold text-foreground mb-2">
+                    {pillar.title}
+                  </h3>
+                  <p className="text-sm text-muted-foreground">
+                    {pillar.description}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Services */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
+              Our Services
+            </h2>
+            <div className="h-1 w-24 bg-primary rounded-full"></div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+            {services.map((service, idx) => (
+              <div
+                key={idx}
+                className="bg-gradient-to-br from-white to-primary/5 rounded-lg p-6 border border-border hover:border-primary hover:shadow-lg transition-all"
+              >
+                <h3 className="text-lg font-semibold text-foreground mb-3">
+                  {service.title}
+                </h3>
+                <p className="text-sm text-muted-foreground mb-4">
+                  {service.description}
+                </p>
+                <Link
+                  to="/services"
+                  className="inline-flex items-center gap-2 text-primary font-semibold text-sm hover:gap-3 transition-all"
+                >
+                  Learn More <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center">
+            <Link
+              to="/services"
+              className="inline-flex items-center gap-2 px-6 py-3 border-2 border-primary text-primary rounded-lg font-semibold hover:bg-primary hover:text-primary-foreground transition-colors"
+            >
+              Explore All Services <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Target Industries */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-secondary/5">
+        <div className="max-w-7xl mx-auto">
+          <div className="mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
+              Industries We Serve
+            </h2>
+            <div className="h-1 w-24 bg-primary rounded-full"></div>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+            {industries.map((industry, idx) => (
+              <div
+                key={idx}
+                className="bg-white rounded-lg p-6 border border-border hover:border-primary hover:shadow-lg transition-all text-center"
+              >
+                <div className="text-4xl mb-3">{industry.icon}</div>
+                <h3 className="font-semibold text-foreground">
+                  {industry.name}
+                </h3>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* SUSTAIN Framework Teaser */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="bg-gradient-to-r from-primary to-secondary rounded-lg p-12 text-white">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+              The SUSTAIN Framework
+            </h2>
+            <p className="text-lg mb-6 opacity-95">
+              Our proprietary methodology ensures every project—whether an
+              eco-resort or a cloud migration—is executed flawlessly.
+            </p>
+            <Link
+              to="/about"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-white text-primary rounded-lg font-semibold hover:bg-gray-100 transition-colors"
+            >
+              Discover Our Methodology <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-muted/40">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-6">
+            Ready to Transform Your Organization?
+          </h2>
+          <p className="text-lg text-muted-foreground mb-8">
+            Let's discuss how our evidence-based approach can drive measurable
+            impact for your business.
+          </p>
+          <Link
+            to="/contact"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-primary-foreground rounded-lg font-semibold hover:bg-primary/90 transition-colors"
           >
-            <circle
-              className="opacity-30"
-              cx="25"
-              cy="25"
-              r="20"
-              stroke="currentColor"
-              strokeWidth="5"
-              fill="none"
-            />
-            <circle
-              className="text-slate-600"
-              cx="25"
-              cy="25"
-              r="20"
-              stroke="currentColor"
-              strokeWidth="5"
-              fill="none"
-              strokeDasharray="100"
-              strokeDashoffset="75"
-            />
-          </svg>
-          Generating your app...
-        </h1>
-        <p className="mt-4 text-slate-600 max-w-md">
-          Watch the chat on the left for updates that might need your attention
-          to finish generating
-        </p>
-        <p className="mt-4 hidden max-w-md">{exampleFromServer}</p>
-      </div>
+            Get in Touch <ArrowRight className="w-4 h-4" />
+          </Link>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-foreground text-white py-12 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+            <div>
+              <h3 className="font-bold text-lg mb-4">DBS Consultancy</h3>
+              <p className="text-sm opacity-75">
+                25+ years of building sustainable ecosystems.
+              </p>
+            </div>
+            <div>
+              <h4 className="font-semibold mb-4">Company</h4>
+              <ul className="space-y-2 text-sm">
+                <li>
+                  <Link to="/about" className="opacity-75 hover:opacity-100">
+                    About Us
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/services" className="opacity-75 hover:opacity-100">
+                    Services
+                  </Link>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold mb-4">Services</h4>
+              <ul className="space-y-2 text-sm">
+                <li>
+                  <Link to="/services" className="opacity-75 hover:opacity-100">
+                    Digital Sustainability
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/services" className="opacity-75 hover:opacity-100">
+                    Cloud Solutions
+                  </Link>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold mb-4">Get Started</h4>
+              <ul className="space-y-2 text-sm">
+                <li>
+                  <Link to="/contact" className="opacity-75 hover:opacity-100">
+                    Contact Us
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="border-t border-white/20 pt-8">
+            <p className="text-center text-sm opacity-75">
+              © {new Date().getFullYear()} DBS Consultancy Services. All rights
+              reserved.
+            </p>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
