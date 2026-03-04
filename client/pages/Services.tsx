@@ -5,7 +5,7 @@ import { ArrowRight } from "lucide-react";
 const sustainabilityImg = "https://images.pexels.com/photos/27243718/pexels-photo-27243718.jpeg";
 const cloudImg = "https://images.pexels.com/photos/1181316/pexels-photo-1181316.jpeg";
 const tourismImg = "https://images.pexels.com/photos/17231775/pexels-photo-17231775.jpeg";
-const wellnessImg = "https://images.pexels.com/photos/31234753/pexels-photo-31234753.jpeg";
+const wellnessImg = "https://images.pexels.com/photos/3881006/pexels-photo-3881006.jpeg";
 const businessImg = "https://images.pexels.com/photos/6289060/pexels-photo-6289060.jpeg";
 
 export default function Services() {
