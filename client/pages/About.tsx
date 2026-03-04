@@ -53,7 +53,7 @@ export default function About() {
               25+ Years of Building Sustainable Ecosystems
             </h1>
             <p className="text-lg sm:text-xl text-white/90">
-              The DBS Journey
+              The DBS Global Journey
             </p>
           </div>
         </div>
@@ -78,7 +78,7 @@ export default function About() {
         <div className="max-w-7xl mx-auto">
           <div className="mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-              Why Choose DBS
+              Why Choose DBS Global
             </h2>
             <div className="h-1 w-24 bg-primary rounded-full"></div>
           </div>
@@ -228,9 +228,9 @@ export default function About() {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
             <div>
-              <h3 className="font-bold text-lg mb-4">DBS Consultancy</h3>
+              <h3 className="font-bold text-lg mb-4">DBS Global</h3>
               <p className="text-sm opacity-75">
-                25+ years of building sustainable ecosystems.
+                25+ years of building sustainable ecosystems through technology and consultancy.
               </p>
             </div>
             <div>
@@ -277,7 +277,7 @@ export default function About() {
 
           <div className="border-t border-white/20 pt-8">
             <p className="text-center text-sm opacity-75">
-              © {new Date().getFullYear()} DBS Consultancy Services. All rights
+              © {new Date().getFullYear()} DBS Global Technology & Consultancy Services. All rights
               reserved.
             </p>
           </div>

@@ -19,12 +19,14 @@ export default function Navigation() {
           {/* Logo */}
           <Link
             to="/"
-            className="flex items-center gap-2 font-bold text-xl text-primary"
+            className="flex items-center gap-2 font-bold text-primary"
           >
-            <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-              <span className="text-white text-sm font-black">DBS</span>
-            </div>
-            <span className="hidden sm:inline">DBS Consultancy</span>
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets%2Fa423cbc5fef44250b7d0c574c56be245%2Ff372b44f9dc64b86b2b9ab88f7a4593d?format=webp&width=800&height=1200"
+              alt="DBS Global Logo"
+              className="h-12 w-auto"
+            />
+            <span className="hidden sm:inline text-sm">DBS Global</span>
           </Link>
 
           {/* Desktop Navigation */}
