@@ -152,6 +152,27 @@ export default function Portfolio() {
         "📱 Digital onboarding to eSmart Cart"
       ],
       impact: "Vision: 'Small contributions creating big changes.' Supporting sustainable livelihoods for street vendors"
+    },
+    {
+      id: 9,
+      title: "AI Smart Tourism Super App Platform",
+      subtitle: "AI-Powered Smart Tourism Digital Ecosystem",
+      description: "An AI-powered Smart Tourism Digital Ecosystem designed for tourism boards to connect visitors, tourism stakeholders, and local vendors through a single integrated platform.",
+      color: "from-cyan-50 to-cyan-100",
+      borderColor: "border-cyan-200",
+      hoverColor: "hover:border-cyan-400",
+      icon: "✈️",
+      features: [
+        "🤖 AI travel assistant for itinerary planning",
+        "📍 GPS-based discovery of attractions and services",
+        "🏪 Vendor marketplace for tourism stakeholders",
+        "📅 Integrated booking and payment systems",
+        "📍 Geo-fencing for location-based offers",
+        "📊 Tourism analytics dashboard for authorities",
+        "📱 Social media promotion and visitor feedback"
+      ],
+      users: "Tourism boards • Government tourism departments • Hotels & homestays • Adventure providers • Domestic & international travelers",
+      impact: "Enhances visitor experience, enables data-driven decisions, and provides digital visibility to local tourism stakeholders"
     }
   ];
 
