@@ -379,13 +379,13 @@ export default function Careers() {
           <div className="bg-gradient-to-br from-primary/5 to-secondary/5 border border-primary/20 rounded-lg p-8 space-y-6 mb-8">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <a
-                href="mailto:ceo@dbsglobaltech.com"
+                href="mailto:hr@dbsglobaltech.com"
                 className="flex items-start gap-4 hover:bg-white/50 p-4 rounded-lg transition-colors"
               >
                 <Mail className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
                 <div>
                   <p className="font-semibold text-foreground">Email</p>
-                  <p className="text-muted-foreground">ceo@dbsglobaltech.com / dbsconsultancyservices@gmail.com</p>
+                  <p className="text-muted-foreground">hr@dbsglobaltech.com</p>
                 </div>
               </a>
 
