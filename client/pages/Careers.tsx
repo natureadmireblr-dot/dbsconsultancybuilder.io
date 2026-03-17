@@ -485,7 +485,7 @@ export default function Careers() {
             <div>
               <h4 className="font-semibold mb-4">Contact</h4>
               <ul className="space-y-2 text-sm opacity-75">
-                <li>Email: info@dbsglobal.com</li>
+                <li>Email: contact@dbsglobaltech.com / dbsconsultancyservices@gmail.com</li>
                 <li>
                   <Link to="/contact" className="hover:opacity-100 transition-opacity">
                     Get Started
