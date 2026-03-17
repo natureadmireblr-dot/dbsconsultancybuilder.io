@@ -267,6 +267,47 @@ export default function Index() {
         </div>
       </section>
 
+      {/* Company Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
+              Company
+            </h2>
+            <div className="h-1 w-24 bg-primary rounded-full"></div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <Link
+              to="/about"
+              className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg overflow-hidden border-2 border-blue-200 hover:border-blue-400 hover:shadow-lg transition-all p-6"
+            >
+              <div className="text-4xl mb-4">📖</div>
+              <h3 className="text-xl font-bold text-blue-900 mb-2">About Us</h3>
+              <p className="text-blue-700 text-sm">Learn about our story, mission, and values.</p>
+            </Link>
+
+            <Link
+              to="/careers"
+              className="bg-gradient-to-br from-green-50 to-green-100 rounded-lg overflow-hidden border-2 border-green-200 hover:border-green-400 hover:shadow-lg transition-all p-6"
+            >
+              <div className="text-4xl mb-4">💼</div>
+              <h3 className="text-xl font-bold text-green-900 mb-2">Careers</h3>
+              <p className="text-green-700 text-sm">Join our growing team and be part of innovation.</p>
+            </Link>
+
+            <Link
+              to="/contact"
+              className="bg-gradient-to-br from-purple-50 to-purple-100 rounded-lg overflow-hidden border-2 border-purple-200 hover:border-purple-400 hover:shadow-lg transition-all p-6"
+            >
+              <div className="text-4xl mb-4">📧</div>
+              <h3 className="text-xl font-bold text-purple-900 mb-2">Contact</h3>
+              <p className="text-purple-700 text-sm">Get in touch with our team for inquiries.</p>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Target Industries */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-blue-50 via-purple-50 to-pink-50">
         <div className="max-w-7xl mx-auto">
