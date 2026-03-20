@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>We're Hiring - Careers at DBS Global</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white">
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-white border-b border-gray-200 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="index-home.html" class="flex items-center gap-2 font-bold text-blue-600">
+                    <span class="text-2xl">🌐</span>
+                    <span class="hidden sm:inline text-sm">DBS Global</span>
+                </a>
+                <div class="hidden md:flex gap-8">
+                    <a href="index-home.html" class="text-sm font-medium text-gray-900 hover:text-blue-600">Home</a>
+                    <a href="page-about.html" class="text-sm font-medium text-gray-900 hover:text-blue-600">About</a>
+                    <a href="page-services.html" class="text-sm font-medium text-gray-900 hover:text-blue-600">Services</a>
+                    <a href="page-portfolio.html" class="text-sm font-medium text-gray-900 hover:text-blue-600">Portfolio</a>
+                    <a href="page-careers.html" class="text-sm font-medium text-blue-600 font-semibold">Careers</a>
+                    <a href="page-contact.html" class="text-sm font-medium text-gray-900 hover:text-blue-600">Contact</a>
+                </div>
+                <a href="page-contact.html" class="hidden md:block px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 text-sm font-medium">Get Started</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600">
+        <div class="max-w-7xl mx-auto">
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">We're Hiring</h1>
+            <p class="text-lg sm:text-xl text-white/90">Join Our Growing Team</p>
+        </div>
+    </section>
+
+    <!-- Intro Section -->
+    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">AI | Machine Learning | Ecommerce | SaaS</h2>
+            <p class="text-lg text-gray-700 mb-6">DBS Global Technology & Consultancy Services is building innovative digital solutions across AI, SaaS platforms, cloud infrastructure, and ecommerce ecosystems. We are looking for passionate professionals to join our growing technology and business teams.</p>
+            <div class="bg-gradient-to-r from-blue-50 to-purple-50 border border-blue-200 rounded-lg p-6 space-y-3">
+                <p class="flex items-center gap-2 text-gray-900 font-semibold">📍 <span>Location: Bengaluru</span></p>
+                <p class="flex items-center gap-2 text-gray-900 font-semibold">💼 <span>Work Type: Hybrid</span></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Job Listings -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-gray-50">
+        <div class="max-w-4xl mx-auto">
+            <!-- HR Section -->
+            <div class="mb-16">
+                <div class="flex items-center gap-3 mb-8">
+                    <span class="text-4xl">👥</span>
+                    <h2 class="text-3xl font-bold text-gray-900">HR & People Operations</h2>
+                </div>
+                <div class="bg-white border border-gray-200 rounded-lg overflow-hidden hover:border-blue-600 transition-colors">
+                    <button class="w-full px-6 py-6 text-left hover:bg-gray-50 transition-colors" onclick="toggleJob(this)">
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">HR Manager</h3>
+                            <p class="text-gray-600">Manage recruitment, policies, talent acquisition, and employee engagement.</p>
+                        </div>
+                    </button>
+                    <div class="hidden px-6 pb-6 bg-gray-50 border-t border-gray-200 space-y-6">
+                        <div>
+                            <h4 class="font-bold text-gray-900 mb-3">📋 Key Responsibilities</h4>
+                            <ul class="space-y-2 text-gray-700">
+                                <li class="flex items-start gap-3">✓ <span>Recruit engineers, consultants, and sales staff</span></li>
+                                <li class="flex items-start gap-3">✓ <span>Handle training and performance management</span></li>
+                                <li class="flex items-start gap-3">✓ <span>Coordinate interviews and onboarding</span></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p class="text-gray-700 mb-4">Senior HR leaders oversee workforce strategy, compliance, and employee development across the organization.</p>
+                            <p class="text-gray-900 font-semibold">📈 Experience Required: 2+ Years</p>
+                        </div>
+                        <a href="page-contact.html" class="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 font-semibold">Apply Now →</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- IT Section -->
+            <div class="mb-16">
+                <div class="flex items-center gap-3 mb-8">
+                    <span class="text-4xl">💻</span>
+                    <h2 class="text-3xl font-bold text-gray-900">IT Positions</h2>
+                </div>
+
+                <!-- Full Stack Developer -->
+                <div class="bg-white border border-gray-200 rounded-lg overflow-hidden hover:border-blue-600 transition-colors mb-4">
+                    <button class="w-full px-6 py-6 text-left hover:bg-gray-50 transition-colors" onclick="toggleJob(this)">
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Full Stack Developer</h3>
+                            <p class="text-gray-600">Develop and maintain web applications and SaaS platforms with scalable architecture.</p>
+                        </div>
+                    </button>
+                    <div class="hidden px-6 pb-6 bg-gray-50 border-t border-gray-200 space-y-6">
+                        <div>
+                            <h4 class="font-bold text-gray-900 mb-3">📋 Key Responsibilities</h4>
+                            <ul class="space-y-2 text-gray-700">
+                                <li class="flex items-start gap-3">✓ <span>Develop and maintain web applications and SaaS platforms</span></li>
+                                <li class="flex items-start gap-3">✓ <span>Build scalable backend systems and responsive frontend interfaces</span></li>
+                                <li class="flex items-start gap-3">✓ <span>Work on APIs, database management, and application security</span></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-900 mb-3">⭐ Required Skills</h4>
+                            <ul class="space-y-2 text-gray-700">
+                                <li>• JavaScript, React, Node.js</li>
+                                <li>• Backend frameworks (Python / Java / Node)</li>
+                                <li>• Database systems (PostgreSQL / MongoDB)</li>
+                            </ul>
+                        </div>
+                        <p class="text-gray-900 font-semibold">📈 Experience Required: 1–2 Years</p>
+                        <a href="page-contact.html" class="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 font-semibold">Apply Now →</a>
+                    </div>
+                </div>
+
+                <!-- Prompt Engineer -->
+                <div class="bg-white border border-gray-200 rounded-lg overflow-hidden hover:border-blue-600 transition-colors mb-4">
+                    <button class="w-full px-6 py-6 text-left hover:bg-gray-50 transition-colors" onclick="toggleJob(this)">
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Prompt Engineer</h3>
+                            <p class="text-gray-600">Design and optimize AI prompts for automation, chatbots, and AI-driven SaaS products.</p>
+                        </div>
+                    </button>
+                    <div class="hidden px-6 pb-6 bg-gray-50 border-t border-gray-200 space-y-6">
+                        <div>
+                            <h4 class="font-bold text-gray-900 mb-3">⭐ Required Skills</h4>
+                            <ul class="space-y-2 text-gray-700">
+                                <li>• AI tools and LLMs</li>
+                                <li>• Prompt frameworks</li>
+                                <li>• Python / AI APIs</li>
+                            </ul>
+                        </div>
+                        <p class="text-gray-900 font-semibold">📈 Experience Required: 1–2 Years</p>
+                        <a href="page-contact.html" class="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 font-semibold">Apply Now →</a>
+                    </div>
+                </div>
+
+                <!-- AWS Engineer -->
+                <div class="bg-white border border-gray-200 rounded-lg overflow-hidden hover:border-blue-600 transition-colors">
+                    <button class="w-full px-6 py-6 text-left hover:bg-gray-50 transition-colors" onclick="toggleJob(this)">
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">AWS / Cloud Engineer</h3>
+                            <p class="text-gray-600">Manage cloud infrastructure, deployments, and DevOps pipelines.</p>
+                        </div>
+                    </button>
+                    <div class="hidden px-6 pb-6 bg-gray-50 border-t border-gray-200 space-y-6">
+                        <div>
+                            <h4 class="font-bold text-gray-900 mb-3">⭐ Required Skills</h4>
+                            <ul class="space-y-2 text-gray-700">
+                                <li>• AWS services (EC2, S3, Lambda)</li>
+                                <li>• Docker / Kubernetes</li>
+                                <li>• CI/CD pipelines</li>
+                            </ul>
+                        </div>
+                        <p class="text-gray-900 font-semibold">📈 Experience Required: 1–2 Years</p>
+                        <a href="page-contact.html" class="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 font-semibold">Apply Now →</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Business Section -->
+            <div class="mb-16">
+                <div class="flex items-center gap-3 mb-8">
+                    <span class="text-4xl">📊</span>
+                    <h2 class="text-3xl font-bold text-gray-900">Business Positions</h2>
+                </div>
+
+                <!-- Sales Executive -->
+                <div class="bg-white border border-gray-200 rounded-lg overflow-hidden hover:border-blue-600 transition-colors mb-4">
+                    <button class="w-full px-6 py-6 text-left hover:bg-gray-50 transition-colors" onclick="toggleJob(this)">
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Sales Executive (IT)</h3>
+                            <p class="text-gray-600">Identify potential clients for technology and consulting services.</p>
+                        </div>
+                    </button>
+                    <div class="hidden px-6 pb-6 bg-gray-50 border-t border-gray-200 space-y-6">
+                        <p class="text-gray-900 font-semibold">📈 Experience Required: 1–2 Years</p>
+                        <a href="page-contact.html" class="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 font-semibold">Apply Now →</a>
+                    </div>
+                </div>
+
+                <!-- Digital Marketing -->
+                <div class="bg-white border border-gray-200 rounded-lg overflow-hidden hover:border-blue-600 transition-colors">
+                    <button class="w-full px-6 py-6 text-left hover:bg-gray-50 transition-colors" onclick="toggleJob(this)">
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Digital Marketing / Consultant</h3>
+                            <p class="text-gray-600">Plan and execute digital marketing campaigns across channels.</p>
+                        </div>
+                    </button>
+                    <div class="hidden px-6 pb-6 bg-gray-50 border-t border-gray-200 space-y-6">
+                        <p class="text-gray-900 font-semibold">📈 Experience Required: 1–2 Years</p>
+                        <a href="page-contact.html" class="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 font-semibold">Apply Now →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Application Details Section -->
+    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">Application Details</h2>
+            <div class="bg-gradient-to-br from-blue-50 to-purple-50 border border-blue-200 rounded-lg p-8 space-y-6 mb-8">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <a href="mailto:hr@dbsglobaltech.com" class="flex items-start gap-4 hover:bg-white/50 p-4 rounded-lg transition-colors">
+                        <span class="text-2xl">📧</span>
+                        <div>
+                            <p class="font-semibold text-gray-900">Email</p>
+                            <p class="text-gray-700">hr@dbsglobaltech.com</p>
+                        </div>
+                    </a>
+                    <a href="https://www.dbsglobaltech.com" target="_blank" class="flex items-start gap-4 hover:bg-white/50 p-4 rounded-lg transition-colors">
+                        <span class="text-2xl">🌐</span>
+                        <div>
+                            <p class="font-semibold text-gray-900">Website</p>
+                            <p class="text-gray-700">www.dbsglobaltech.com</p>
+                        </div>
+                    </a>
+                    <div class="flex items-start gap-4 p-4">
+                        <span class="text-2xl">📞</span>
+                        <div>
+                            <p class="font-semibold text-gray-900">Contact</p>
+                            <p class="text-gray-700">8618751811 / 9108219929</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-gradient-to-r from-green-50 to-emerald-50 border border-green-200 rounded-lg p-8 text-center">
+                <p class="flex items-center justify-center gap-2 text-lg font-semibold text-gray-900 mb-3">✔ Equal Employment Opportunity Provider</p>
+                <p class="text-gray-700">DBS Global Technology & Consultancy Services welcomes talented professionals who are passionate about innovation, technology, and global impact.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="font-bold text-lg mb-4">DBS Global</h3>
+                    <p class="text-sm text-gray-400">25+ years of building sustainable ecosystems through technology and consultancy.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Company</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="page-about.html" class="hover:text-white transition">About Us</a></li>
+                        <li><a href="page-services.html" class="hover:text-white transition">Services</a></li>
+                        <li><a href="page-portfolio.html" class="hover:text-white transition">Portfolio</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Opportunities</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="page-careers.html" class="hover:text-white transition">Careers</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Contact</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li>Email: contact@dbsglobaltech.com / dbsconsultancyservices@gmail.com</li>
+                        <li><a href="page-contact.html" class="hover:text-white transition">Get Started</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8">
+                <p class="text-center text-sm text-gray-400">© 2024 DBS Global Technology & Consultancy Services. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleJob(button) {
+            const details = button.nextElementSibling;
+            details.classList.toggle('hidden');
+        }
+    </script>
+</body>
+</html>
