@@ -246,6 +246,16 @@ export default function About() {
                     Services
                   </Link>
                 </li>
+                <li>
+                  <Link to="/portfolio" className="opacity-75 hover:opacity-100">
+                    Portfolio
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/careers" className="opacity-75 hover:opacity-100">
+                    Careers
+                  </Link>
+                </li>
               </ul>
             </div>
             <div>
