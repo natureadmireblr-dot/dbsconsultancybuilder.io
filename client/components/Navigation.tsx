@@ -9,7 +9,6 @@ export default function Navigation() {
     { label: "Home", href: "/" },
     { label: "About Us", href: "/about" },
     { label: "Services", href: "/services" },
-    { label: "Portfolio", href: "/portfolio" },
     { label: "Careers", href: "/careers" },
     { label: "Contact", href: "/contact" },
   ];
