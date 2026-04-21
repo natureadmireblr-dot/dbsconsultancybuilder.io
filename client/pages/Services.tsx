@@ -1,123 +1,538 @@
 import Navigation from "@/components/Navigation";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
-
-const sustainabilityImg = "https://images.pexels.com/photos/27243718/pexels-photo-27243718.jpeg";
-const cloudImg = "https://images.pexels.com/photos/1181316/pexels-photo-1181316.jpeg";
-const tourismImg = "https://images.pexels.com/photos/17231775/pexels-photo-17231775.jpeg";
-const wellnessImg = "https://images.pexels.com/photos/3881006/pexels-photo-3881006.jpeg";
-const businessImg = "https://images.pexels.com/photos/6289060/pexels-photo-6289060.jpeg";
+import { useState } from "react";
 
 export default function Services() {
+  const [expandedStep, setExpandedStep] = useState<number | null>(null);
+
+  const coreSolutions = [
+    {
+      title: "🌐 Digital Development",
+      icon: "💻",
+      features: [
+        "Website Design & Development",
+        "Mobile Applications (iOS / Android)",
+        "UI/UX Design",
+      ],
+    },
+    {
+      title: "☁️ Cloud & Infrastructure",
+      icon: "🔧",
+      features: [
+        "Cloud Hosting Services",
+        "AWS & Google Cloud Reseller Services",
+        "Cloud Telephony Solutions",
+        "Data Backup & Disaster Recovery",
+      ],
+    },
+    {
+      title: "📊 Data & Intelligence",
+      icon: "📈",
+      features: [
+        "Data Analytics & Business Intelligence",
+        "AI / ML Solutions",
+        "Predictive Insights",
+      ],
+    },
+    {
+      title: "📣 Marketing & Growth",
+      icon: "🚀",
+      features: [
+        "Digital Marketing",
+        "Performance Marketing",
+        "Lead Generation Services",
+        "WhatsApp Marketing Automation",
+      ],
+    },
+    {
+      title: "🔐 Security & Compliance",
+      icon: "🛡️",
+      features: [
+        "Cybersecurity Solutions",
+        "Endpoint Protection",
+        "Threat Intelligence",
+      ],
+    },
+  ];
+
+  const industriesList = [
+    "Healthcare",
+    "Tourism & Travel",
+    "FMCG",
+    "Hotels & Resorts",
+    "Transportation & Logistics",
+    "Construction",
+    "Manufacturing & Industries",
+  ];
+
+  const partners = [
+    { name: "Convozen.ai", icon: "🤖" },
+    { name: "Crowdstrike", icon: "🛡️" },
+    { name: "Veeam", icon: "💾" },
+    { name: "ScyllaDB", icon: "🗄️" },
+    { name: "Microsoft", icon: "🪟" },
+    { name: "Binge", icon: "🎬" },
+    { name: "AWS", icon: "☁️" },
+    { name: "Google", icon: "🔍" },
+    { name: "Carayon", icon: "🎯" },
+  ];
+
+  const whyChoose = [
+    "End-to-End Integrated Solutions",
+    "Scalable Cloud Infrastructure",
+    "Data-Driven Decision Making",
+    "Industry-Specific Customization",
+    "Strong Global Technology Partnerships",
+  ];
+
+  const serviceFlow = [
+    {
+      step: 1,
+      title: "Business Onboarding",
+      description: "Understand your unique business needs",
+      details: ["Requirement Analysis", "Industry Mapping", "Digital Readiness Audit"],
+    },
+    {
+      step: 2,
+      title: "Digital Foundation",
+      description: "Build the core technical infrastructure",
+      details: [
+        "Website / App Development",
+        "Cloud Hosting Setup",
+        "Cloud Telephony Integration",
+      ],
+    },
+    {
+      step: 3,
+      title: "Data Layer",
+      description: "Establish data collection and management",
+      details: [
+        "Data Collection Systems",
+        "CRM Integration",
+        "Analytics Dashboard Setup",
+      ],
+    },
+    {
+      step: 4,
+      title: "Growth Engine",
+      description: "Drive customer acquisition and engagement",
+      details: [
+        "Digital Marketing Campaigns",
+        "Performance Marketing",
+        "Lead Generation Funnels",
+        "WhatsApp Automation",
+      ],
+    },
+    {
+      step: 5,
+      title: "Intelligence Layer",
+      description: "Unlock insights from your data",
+      details: [
+        "AI / ML Integration",
+        "Predictive Analytics",
+        "Customer Behavior Insights",
+      ],
+    },
+    {
+      step: 6,
+      title: "Security & Compliance",
+      description: "Protect your data and operations",
+      details: [
+        "Endpoint Security (Crowdstrike)",
+        "Backup (Veeam)",
+        "Data Protection",
+      ],
+    },
+    {
+      step: 7,
+      title: "Optimization & Scaling",
+      description: "Continuously improve and grow",
+      details: [
+        "Continuous Monitoring",
+        "Cloud Scaling (AWS / Google)",
+        "Conversion Optimization",
+      ],
+    },
+  ];
+
+  const industryFlows = [
+    {
+      title: "Tourism / Hotels",
+      steps: [
+        "Website + Booking Engine",
+        "WhatsApp Inquiry Automation",
+        "Lead Capture Funnel",
+        "Performance Marketing Campaigns",
+        "Customer Analytics",
+        "AI-based Pricing Insights",
+      ],
+    },
+    {
+      title: "Healthcare",
+      steps: [
+        "Patient Portal / App",
+        "Appointment Automation",
+        "Data Analytics Dashboard",
+        "Secure Cloud Storage",
+        "AI Diagnosis Assistance",
+      ],
+    },
+    {
+      title: "FMCG",
+      steps: [
+        "Distribution App",
+        "Retailer Engagement System",
+        "Sales Analytics",
+        "Performance Marketing",
+        "Demand Forecasting (AI)",
+      ],
+    },
+  ];
+
+  const optionalAddOns = [
+    "Dashboard UI Design",
+    "Mobile-first Experience",
+    "API Integrations",
+    "ERP / CRM Systems",
+  ];
+
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
 
       {/* Hero Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-primary via-secondary to-accent">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-primary via-primary/95 to-primary/90">
         <div className="max-w-7xl mx-auto">
           <div className="max-w-3xl">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
               Our Services
             </h1>
-            <p className="text-lg sm:text-xl text-white/90">
-              Comprehensive solutions across Digital Business, IT & Cloud, Tourism, Wellness, and Business Development.
+            <p className="text-xl sm:text-2xl text-white/95">
+              Comprehensive technology, marketing, and cloud solutions designed to accelerate your business growth across all industries.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Services Grid */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-gray-50">
+      {/* Core Solutions */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg overflow-hidden border-2 border-blue-200 hover:border-blue-400 hover:shadow-lg transition-all">
-              <img src={sustainabilityImg} alt="Digital Business & ESG" className="w-full h-48 object-cover" />
-              <div className="p-8">
-                <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-4">
-                  <span className="text-white text-xl">⚡</span>
-                </div>
-                <h3 className="text-2xl font-bold text-blue-900 mb-4">Digital Business & ESG</h3>
-                <p className="text-blue-700 mb-4">Carbon optimization and green tech solutions for the digital economy.</p>
-                <Link to="/contact" className="inline-flex items-center gap-2 text-blue-600 font-semibold hover:gap-3 transition-all">
-                  Learn More <ArrowRight className="w-4 h-4" />
-                </Link>
-              </div>
-            </div>
+          <div className="mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
+              Our Core Solutions
+            </h2>
+            <div className="h-1 w-24 bg-primary rounded-full"></div>
+          </div>
 
-            <div className="bg-gradient-to-br from-purple-50 to-purple-100 rounded-lg overflow-hidden border-2 border-purple-200 hover:border-purple-400 hover:shadow-lg transition-all">
-              <img src={cloudImg} alt="IT & Cloud Solutions" className="w-full h-48 object-cover" />
-              <div className="p-8">
-                <div className="w-12 h-12 bg-purple-600 rounded-lg flex items-center justify-center mb-4">
-                  <span className="text-white text-xl">☁️</span>
-                </div>
-                <h3 className="text-2xl font-bold text-purple-900 mb-4">IT & Cloud Solutions</h3>
-                <p className="text-purple-700 mb-4">Scalable cloud architecture, SaaS, and AI development services.</p>
-                <Link to="/contact" className="inline-flex items-center gap-2 text-purple-600 font-semibold hover:gap-3 transition-all">
-                  Learn More <ArrowRight className="w-4 h-4" />
-                </Link>
-              </div>
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+            {coreSolutions.map((solution, idx) => {
+              const colors = [
+                { bg: "bg-blue-50", border: "border-blue-200 hover:border-blue-400", textColor: "text-blue-900" },
+                { bg: "bg-cyan-50", border: "border-cyan-200 hover:border-cyan-400", textColor: "text-cyan-900" },
+                { bg: "bg-green-50", border: "border-green-200 hover:border-green-400", textColor: "text-green-900" },
+                { bg: "bg-orange-50", border: "border-orange-200 hover:border-orange-400", textColor: "text-orange-900" },
+                { bg: "bg-red-50", border: "border-red-200 hover:border-red-400", textColor: "text-red-900" },
+              ];
+              const color = colors[idx];
 
-            <div className="bg-gradient-to-br from-green-50 to-green-100 rounded-lg overflow-hidden border-2 border-green-200 hover:border-green-400 hover:shadow-lg transition-all">
-              <img src={tourismImg} alt="Adventure & Eco-Tourism" className="w-full h-48 object-cover" />
-              <div className="p-8">
-                <div className="w-12 h-12 bg-green-600 rounded-lg flex items-center justify-center mb-4">
-                  <span className="text-white text-xl">🏔️</span>
+              return (
+                <div
+                  key={idx}
+                  className={`${color.bg} rounded-lg p-6 border-2 ${color.border} hover:shadow-lg transition-all`}
+                >
+                  <div className="text-4xl mb-3">{solution.icon}</div>
+                  <h3 className={`text-lg font-semibold ${color.textColor} mb-4`}>
+                    {solution.title}
+                  </h3>
+                  <ul className="space-y-2">
+                    {solution.features.map((feature, fidx) => (
+                      <li key={fidx} className="flex items-start gap-2 text-sm text-muted-foreground">
+                        <span className="text-primary font-bold">•</span>
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-                <h3 className="text-2xl font-bold text-green-900 mb-4">Adventure & Eco-Tourism</h3>
-                <p className="text-green-700 mb-4">Smart, sustainable destination development and planning.</p>
-                <Link to="/contact" className="inline-flex items-center gap-2 text-green-600 font-semibold hover:gap-3 transition-all">
-                  Learn More <ArrowRight className="w-4 h-4" />
-                </Link>
-              </div>
-            </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
 
-            <div className="bg-gradient-to-br from-pink-50 to-pink-100 rounded-lg overflow-hidden border-2 border-pink-200 hover:border-pink-400 hover:shadow-lg transition-all">
-              <img src={wellnessImg} alt="Wellness Tourism" className="w-full h-48 object-cover" />
-              <div className="p-8">
-                <div className="w-12 h-12 bg-pink-600 rounded-lg flex items-center justify-center mb-4">
-                  <span className="text-white text-xl">🧘</span>
-                </div>
-                <h3 className="text-2xl font-bold text-pink-900 mb-4">Wellness Tourism</h3>
-                <p className="text-pink-700 mb-4">End-to-end resort facilitation and expert manpower supply.</p>
-                <Link to="/contact" className="inline-flex items-center gap-2 text-pink-600 font-semibold hover:gap-3 transition-all">
-                  Learn More <ArrowRight className="w-4 h-4" />
-                </Link>
-              </div>
-            </div>
+      {/* Industry Solutions */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-muted/30 to-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
+              Industry Solutions
+            </h2>
+            <div className="h-1 w-24 bg-primary rounded-full"></div>
+          </div>
 
-            <div className="bg-gradient-to-br from-amber-50 to-amber-100 rounded-lg overflow-hidden border-2 border-amber-200 hover:border-amber-400 hover:shadow-lg transition-all md:col-span-2 lg:col-span-2">
-              <img src={businessImg} alt="Strategic Business Development" className="w-full h-48 object-cover" />
-              <div className="p-8">
-                <div className="w-12 h-12 bg-amber-600 rounded-lg flex items-center justify-center mb-4">
-                  <span className="text-white text-xl">📈</span>
+          <p className="text-lg text-muted-foreground mb-8">
+            We build customized ecosystems for:
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            {industriesList.map((industry, idx) => {
+              const icons = ["🏥", "✈️", "📦", "🏨", "🚚", "🏗️", "🏭"];
+              return (
+                <div
+                  key={idx}
+                  className="bg-gradient-to-br from-primary/10 to-primary/5 rounded-lg p-6 border border-primary/20 hover:border-primary/40 hover:shadow-lg transition-all"
+                >
+                  <div className="text-4xl mb-3">{icons[idx]}</div>
+                  <h3 className="font-semibold text-foreground">{industry}</h3>
                 </div>
-                <h3 className="text-2xl font-bold text-amber-900 mb-4">Strategic Business Development</h3>
-                <p className="text-amber-700 mb-4">Growth strategies, lifecycle support, and digital transformation for enterprises.</p>
-                <Link to="/contact" className="inline-flex items-center gap-2 text-amber-600 font-semibold hover:gap-3 transition-all">
-                  Learn More <ArrowRight className="w-4 h-4" />
-                </Link>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Technology Partners */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
+              Technology & Integration Partners
+            </h2>
+            <div className="h-1 w-24 bg-primary rounded-full"></div>
+          </div>
+
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+            {partners.map((partner, idx) => (
+              <div
+                key={idx}
+                className="bg-gradient-to-br from-slate-50 to-slate-100 rounded-lg p-6 border border-border hover:shadow-lg hover:border-primary transition-all text-center"
+              >
+                <div className="text-5xl mb-3">{partner.icon}</div>
+                <p className="font-semibold text-foreground text-sm">{partner.name}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose DBS */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-blue-50 to-purple-50">
+        <div className="max-w-7xl mx-auto">
+          <div className="mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
+              Why Choose DBS?
+            </h2>
+            <div className="h-1 w-24 bg-primary rounded-full"></div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+            {whyChoose.map((reason, idx) => (
+              <div
+                key={idx}
+                className="bg-white rounded-lg p-6 border-2 border-primary/20 hover:border-primary hover:shadow-lg transition-all"
+              >
+                <div className="text-4xl mb-4">
+                  {["🔗", "📈", "📊", "🎯", "🌍"][idx]}
+                </div>
+                <h3 className="text-lg font-semibold text-foreground leading-snug">{reason}</h3>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Service Flow */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
+              Business Service Flow (Integrated Ecosystem)
+            </h2>
+            <div className="h-1 w-24 bg-primary rounded-full"></div>
+            <p className="text-lg text-muted-foreground mt-4">
+              A comprehensive 7-step journey to digital transformation
+            </p>
+          </div>
+
+          <div className="space-y-4">
+            {serviceFlow.map((item, idx) => (
+              <div
+                key={idx}
+                className="border border-border rounded-lg overflow-hidden hover:border-primary transition-colors"
+              >
+                <button
+                  onClick={() => setExpandedStep(expandedStep === idx ? null : idx)}
+                  className="w-full p-6 bg-white hover:bg-muted/50 transition-colors text-left flex items-start justify-between gap-4"
+                >
+                  <div className="flex items-start gap-4 flex-1">
+                    <div className="flex-shrink-0">
+                      <div className="flex items-center justify-center h-12 w-12 rounded-lg bg-primary text-white font-bold text-lg">
+                        {item.step}
+                      </div>
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-xl font-semibold text-foreground mb-1">
+                        {item.title}
+                      </h3>
+                      <p className="text-muted-foreground">{item.description}</p>
+                    </div>
+                  </div>
+                  <div className="flex-shrink-0">
+                    <ArrowRight
+                      className={`w-5 h-5 text-primary transition-transform ${
+                        expandedStep === idx ? "rotate-90" : ""
+                      }`}
+                    />
+                  </div>
+                </button>
+
+                {expandedStep === idx && (
+                  <div className="bg-muted/30 border-t border-border p-6">
+                    <ul className="space-y-3">
+                      {item.details.map((detail, didx) => (
+                        <li key={didx} className="flex items-start gap-3">
+                          <span className="text-primary font-bold text-lg">✓</span>
+                          <span className="text-muted-foreground">{detail}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Industry Flow Examples */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-muted/40 to-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
+              Industry Flow Examples
+            </h2>
+            <div className="h-1 w-24 bg-primary rounded-full"></div>
+            <p className="text-lg text-muted-foreground mt-4">
+              See how our integrated approach works across different sectors
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {industryFlows.map((flow, idx) => {
+              const colors = [
+                { bg: "bg-blue-50", border: "border-blue-200", title: "text-blue-900" },
+                { bg: "bg-green-50", border: "border-green-200", title: "text-green-900" },
+                { bg: "bg-purple-50", border: "border-purple-200", title: "text-purple-900" },
+              ];
+              const color = colors[idx];
+
+              return (
+                <div
+                  key={idx}
+                  className={`${color.bg} rounded-lg border-2 ${color.border} p-8 hover:shadow-lg transition-all`}
+                >
+                  <h3 className={`text-2xl font-bold ${color.title} mb-6`}>
+                    {flow.title}
+                  </h3>
+                  <ol className="space-y-3">
+                    {flow.steps.map((step, stepIdx) => (
+                      <li key={stepIdx} className="flex items-start gap-4">
+                        <span className="flex-shrink-0 flex items-center justify-center h-8 w-8 rounded-full bg-primary text-white font-semibold text-sm">
+                          {stepIdx + 1}
+                        </span>
+                        <span className="text-muted-foreground pt-1">{step}</span>
+                      </li>
+                    ))}
+                  </ol>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Visual Flow */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
+              Visual Flow (Simplified Representation)
+            </h2>
+            <div className="h-1 w-24 bg-primary rounded-full"></div>
+          </div>
+
+          <div className="bg-gradient-to-r from-blue-50 via-purple-50 to-pink-50 rounded-lg p-8 border-2 border-primary/20">
+            <div className="overflow-x-auto">
+              <div className="min-w-max flex items-center gap-4 text-center">
+                {[
+                  "Business",
+                  "Digital Platform",
+                  "Cloud Infrastructure",
+                  "Data Collection",
+                  "Marketing Engine",
+                  "AI Insights",
+                  "Security Layer",
+                  "Growth & Scale",
+                ].map((step, idx, arr) => (
+                  <div key={idx} className="flex items-center gap-4">
+                    <div className="bg-white border-2 border-primary rounded-lg px-6 py-4 whitespace-nowrap font-semibold text-foreground min-w-fit">
+                      {step}
+                    </div>
+                    {idx < arr.length - 1 && (
+                      <ArrowRight className="w-6 h-6 text-primary flex-shrink-0" />
+                    )}
+                  </div>
+                ))}
               </div>
             </div>
           </div>
         </div>
       </section>
 
+      {/* Optional Add-ons */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-amber-50 to-orange-50">
+        <div className="max-w-7xl mx-auto">
+          <div className="mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
+              Optional Add-ons
+            </h2>
+            <div className="h-1 w-24 bg-primary rounded-full"></div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {optionalAddOns.map((addon, idx) => (
+              <div
+                key={idx}
+                className="bg-white rounded-lg p-6 border-2 border-amber-200 hover:border-amber-400 hover:shadow-lg transition-all"
+              >
+                <div className="flex items-start gap-4">
+                  <div className="text-3xl">
+                    {["🎨", "📱", "🔌", "💼"][idx]}
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-foreground">{addon}</h3>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-muted/40">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-primary to-primary/90">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-6">
-            Interested in a specific service?
+          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6">
+            Transform Your Business Today 🚀
           </h2>
-          <p className="text-lg text-muted-foreground mb-8">
-            Contact our team to discuss how we can help your organization.
+          <p className="text-xl text-white/95 mb-10">
+            Contact us for a customized digital roadmap.
           </p>
           <Link
             to="/contact"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-primary-foreground rounded-lg font-semibold hover:bg-primary/90 transition-colors"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-white text-primary rounded-lg font-semibold hover:bg-gray-100 transition-colors"
           >
-            Get in Touch <ArrowRight className="w-4 h-4" />
+            Get Started Now <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
       </section>
@@ -162,12 +577,17 @@ export default function Services() {
               <ul className="space-y-2 text-sm">
                 <li>
                   <Link to="/services" className="opacity-75 hover:opacity-100">
-                    Digital Sustainability
+                    Digital Development
                   </Link>
                 </li>
                 <li>
                   <Link to="/services" className="opacity-75 hover:opacity-100">
                     Cloud Solutions
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/services" className="opacity-75 hover:opacity-100">
+                    Security & Compliance
                   </Link>
                 </li>
               </ul>
@@ -180,13 +600,18 @@ export default function Services() {
                     Contact Us
                   </Link>
                 </li>
+                <li>
+                  <Link to="/portfolio" className="opacity-75 hover:opacity-100">
+                    View Portfolio
+                  </Link>
+                </li>
               </ul>
             </div>
           </div>
 
           <div className="border-t border-white/20 pt-8">
             <p className="text-center text-sm opacity-75">
-              © {new Date().getFullYear()} DBS Global Technology & Consultancy Services. All rights
+              © {new Date().getFullYear()} DBS Global Technology & Consulting Services. All rights
               reserved.
             </p>
           </div>
