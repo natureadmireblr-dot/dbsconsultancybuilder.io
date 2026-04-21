@@ -69,7 +69,7 @@ export default function Index() {
   const partners = [
     {
       name: "Convozen.ai",
-      logo: "https://convozen.ai/wp-content/uploads/2024/01/convozen-logo.png",
+      logo: "https://cdn.builder.io/api/v1/image/assets%2Fa423cbc5fef44250b7d0c574c56be245%2F7e276c9257534eef85644adb427076da?format=webp&width=800&height=1200",
       fallback: "🤖"
     },
     {
