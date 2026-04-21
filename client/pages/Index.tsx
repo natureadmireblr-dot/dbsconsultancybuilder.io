@@ -1,74 +1,159 @@
 import Navigation from "@/components/Navigation";
-import { ArrowRight, Leaf, Zap, Users, TrendingUp, Globe } from "lucide-react";
+import { ArrowRight, Zap, Cloud, BarChart3, Megaphone, Lock } from "lucide-react";
 import { Link } from "react-router-dom";
-
-const sustainabilityImg = "https://images.pexels.com/photos/27243718/pexels-photo-27243718.jpeg";
-const cloudImg = "https://images.pexels.com/photos/1181316/pexels-photo-1181316.jpeg";
-const tourismImg = "https://images.pexels.com/photos/17231775/pexels-photo-17231775.jpeg";
-const wellnessImg = "https://images.pexels.com/photos/31234753/pexels-photo-31234753.jpeg";
-const cloudOpsImg = "https://images.pexels.com/photos/5480781/pexels-photo-5480781.jpeg";
+import { useState } from "react";
 
 export default function Index() {
-  const pillars = [
+  const [expandedStep, setExpandedStep] = useState<number | null>(null);
+
+  const coreSolutions = [
     {
-      title: "Digital Business & ESG",
-      description:
-        "Carbon optimization and green tech for the digital economy.",
-      icon: Zap,
+      title: "🌐 Digital Development",
+      icon: "💻",
+      features: [
+        "Website Design & Development",
+        "Mobile Applications (iOS / Android)",
+        "UI/UX Design",
+      ],
     },
     {
-      title: "IT & Cloud Solutions",
-      description:
-        "Scalable cloud architecture, SaaS, and AI development.",
-      icon: Globe,
+      title: "☁️ Cloud & Infrastructure",
+      icon: "🔧",
+      features: [
+        "Cloud Hosting Services",
+        "AWS & Google Cloud Reseller Services",
+        "Cloud Telephony Solutions",
+        "Data Backup & Disaster Recovery",
+      ],
     },
     {
-      title: "Adventure & Eco-Tourism",
-      description: "Smart, sustainable destination development.",
-      icon: Leaf,
+      title: "📊 Data & Intelligence",
+      icon: "📈",
+      features: [
+        "Data Analytics & Business Intelligence",
+        "AI / ML Solutions",
+        "Predictive Insights",
+      ],
     },
     {
-      title: "Wellness Tourism",
-      description: "End-to-end resort facilitation and expert manpower supply.",
-      icon: Users,
+      title: "📣 Marketing & Growth",
+      icon: "🚀",
+      features: [
+        "Digital Marketing",
+        "Performance Marketing",
+        "Lead Generation Services",
+        "WhatsApp Marketing Automation",
+      ],
     },
     {
-      title: "Business Development",
-      description:
-        "Strategic lifecycle support for Micro to Macro enterprises.",
-      icon: TrendingUp,
+      title: "🔐 Security & Compliance",
+      icon: "🛡️",
+      features: [
+        "Cybersecurity Solutions",
+        "Endpoint Protection",
+        "Threat Intelligence",
+      ],
     },
   ];
 
-  const services = [
-    {
-      title: "Digital Carbon Footprint Assessment",
-      description:
-        "Comprehensive measurement of carbon emissions from cloud infrastructure, website hosting, and digital product usage.",
-    },
-    {
-      title: "Green Cloud Architecture Review",
-      description:
-        "Technical audits of AWS, Azure, and GCP infrastructure to right-size resources and optimize for both carbon and cost reductions.",
-    },
-    {
-      title: "ESG Strategy & Reporting",
-      description:
-        "Design and implementation of data collection systems aligned with global frameworks for pre-IPO startups and enterprise clients.",
-    },
-    {
-      title: "Cloud Platform Operations",
-      description:
-        "Implementation and management of AWS and Azure stacks with high-availability distributed systems.",
-    },
+  const industriesList = [
+    "Healthcare",
+    "Tourism & Travel",
+    "FMCG",
+    "Hotels & Resorts",
+    "Transportation & Logistics",
+    "Construction",
+    "Manufacturing & Industries",
   ];
 
-  const industries = [
-    { name: "SaaS & Cloud Software", icon: "💻" },
-    { name: "E-commerce & D2C Brands", icon: "📦" },
-    { name: "Tech Startups", icon: "🚀" },
-    { name: "Hospitality & Real Estate", icon: "🏨" },
-    { name: "Government & Public Sector", icon: "🏛️" },
+  const partners = [
+    "Convozen.ai",
+    "Crowdstrike",
+    "Veeam",
+    "ScyllaDB",
+    "Microsoft",
+    "Binge",
+    "AWS",
+    "Google",
+    "Carayon",
+  ];
+
+  const whyChoose = [
+    "End-to-End Integrated Solutions",
+    "Scalable Cloud Infrastructure",
+    "Data-Driven Decision Making",
+    "Industry-Specific Customization",
+    "Strong Global Technology Partnerships",
+  ];
+
+  const serviceFlow = [
+    {
+      step: 1,
+      title: "Business Onboarding",
+      description: "Understand your unique business needs and digital landscape",
+      details: ["Requirement Analysis", "Industry Mapping", "Digital Readiness Audit"],
+    },
+    {
+      step: 2,
+      title: "Digital Foundation",
+      description: "Build the core technical infrastructure",
+      details: [
+        "Website / App Development",
+        "Cloud Hosting Setup",
+        "Cloud Telephony Integration",
+      ],
+    },
+    {
+      step: 3,
+      title: "Data Layer",
+      description: "Establish data collection and management systems",
+      details: [
+        "Data Collection Systems",
+        "CRM Integration",
+        "Analytics Dashboard Setup",
+      ],
+    },
+    {
+      step: 4,
+      title: "Growth Engine",
+      description: "Drive customer acquisition and engagement",
+      details: [
+        "Digital Marketing Campaigns",
+        "Performance Marketing",
+        "Lead Generation Funnels",
+        "WhatsApp Automation",
+      ],
+    },
+    {
+      step: 5,
+      title: "Intelligence Layer",
+      description: "Unlock insights from your data",
+      details: [
+        "AI / ML Integration",
+        "Predictive Analytics",
+        "Customer Behavior Insights",
+      ],
+    },
+    {
+      step: 6,
+      title: "Security & Compliance",
+      description: "Protect your data and operations",
+      details: [
+        "Endpoint Security (Crowdstrike)",
+        "Backup (Veeam)",
+        "Data Protection",
+      ],
+    },
+    {
+      step: 7,
+      title: "Optimization & Scaling",
+      description: "Continuously improve and grow",
+      details: [
+        "Continuous Monitoring",
+        "Cloud Scaling (AWS / Google)",
+        "Conversion Optimization",
+      ],
+    },
   ];
 
   return (
@@ -76,95 +161,143 @@ export default function Index() {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-primary via-secondary to-accent">
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-primary via-primary/95 to-primary/90">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center max-w-3xl mx-auto">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-              Bridging Sustainability, Technology, Conservation, and Business
-              Growth
+          <div className="text-center max-w-4xl mx-auto">
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+              Empowering Businesses with Smart Digital Transformation
             </h1>
-            <p className="text-lg sm:text-xl text-white/90 mb-8">
-              Evidence-based consulting that delivers measurable environmental
-              and economic impact across the digital and physical worlds.
+            <p className="text-xl sm:text-2xl text-white/95 mb-10 leading-relaxed">
+              End-to-end technology, marketing, and cloud solutions to accelerate growth across industries.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 to="/contact"
                 className="px-8 py-4 bg-white text-primary rounded-lg font-semibold hover:bg-gray-100 transition-colors flex items-center justify-center gap-2"
               >
-                Start Your Transformation <ArrowRight className="w-4 h-4" />
+                Get a Free Consultation <ArrowRight className="w-4 h-4" />
               </Link>
               <Link
-                to="/about"
+                to="/portfolio"
                 className="px-8 py-4 bg-transparent border-2 border-white text-white rounded-lg font-semibold hover:bg-white/10 transition-colors"
               >
-                Learn Our Story
+                Explore Solutions
               </Link>
             </div>
           </div>
         </div>
       </section>
 
-      {/* DBS Advantage Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
+      {/* About Us Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-              The DBS Global Advantage
+              About DBS Global
             </h2>
             <div className="h-1 w-24 bg-primary rounded-full"></div>
           </div>
 
-          <div className="bg-white border border-border rounded-lg p-8 sm:p-12">
-            <p className="text-lg text-foreground leading-relaxed">
-              We are the only consultancy practice that combines deep
-              sustainability expertise with AI, big data, and cloud
-              infrastructure capabilities to help businesses grow profitably
-              while meeting their environmental commitments.{" "}
-              <span className="font-semibold">
-                We do not just advise; we build tech-enabled solutions and
-                physical infrastructure that drive measurable impact.
-              </span>
-            </p>
+          <div className="space-y-6">
+            <div className="bg-gradient-to-r from-blue-50 to-blue-100 rounded-lg p-8 border border-blue-200">
+              <h3 className="text-xl font-semibold text-foreground mb-4">
+                Who We Are
+              </h3>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                DBS Global Technology & Consulting Services is a comprehensive digital transformation partner delivering scalable, secure, and performance-driven solutions for modern businesses.
+              </p>
+            </div>
+
+            <div className="bg-gradient-to-r from-purple-50 to-purple-100 rounded-lg p-8 border border-purple-200">
+              <h3 className="text-xl font-semibold text-foreground mb-4">
+                Our Expertise
+              </h3>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                We help organizations across Healthcare, Tourism, FMCG, Hospitality, Transportation, Construction, and Industrial sectors streamline operations, improve customer engagement, and drive measurable growth.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Five Core Pillars */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-muted/40 to-white">
+      {/* Core Solutions */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-muted/30 to-white">
         <div className="max-w-7xl mx-auto">
           <div className="mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-              Our Five Core Pillars
+              Our Core Solutions
             </h2>
             <div className="h-1 w-24 bg-primary rounded-full"></div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
-            {pillars.map((pillar, idx) => {
-              const IconComponent = pillar.icon;
+            {coreSolutions.map((solution, idx) => {
               const colors = [
-                { bg: "bg-blue-50", icon: "text-blue-600", border: "border-blue-200 hover:border-blue-400" },
-                { bg: "bg-purple-50", icon: "text-purple-600", border: "border-purple-200 hover:border-purple-400" },
-                { bg: "bg-green-50", icon: "text-green-600", border: "border-green-200 hover:border-green-400" },
-                { bg: "bg-pink-50", icon: "text-pink-600", border: "border-pink-200 hover:border-pink-400" },
-                { bg: "bg-amber-50", icon: "text-amber-600", border: "border-amber-200 hover:border-amber-400" },
+                { bg: "bg-blue-50", border: "border-blue-200 hover:border-blue-400", textColor: "text-blue-900" },
+                { bg: "bg-cyan-50", border: "border-cyan-200 hover:border-cyan-400", textColor: "text-cyan-900" },
+                { bg: "bg-green-50", border: "border-green-200 hover:border-green-400", textColor: "text-green-900" },
+                { bg: "bg-orange-50", border: "border-orange-200 hover:border-orange-400", textColor: "text-orange-900" },
+                { bg: "bg-red-50", border: "border-red-200 hover:border-red-400", textColor: "text-red-900" },
               ];
               const color = colors[idx];
+
               return (
                 <div
                   key={idx}
                   className={`${color.bg} rounded-lg p-6 border-2 ${color.border} hover:shadow-lg transition-all`}
                 >
-                  <div className={`w-12 h-12 bg-white rounded-lg flex items-center justify-center mb-4`}>
-                    <IconComponent className={`w-6 h-6 ${color.icon}`} />
-                  </div>
-                  <h3 className="text-lg font-semibold text-foreground mb-2">
-                    {pillar.title}
+                  <div className="text-4xl mb-3">{solution.icon}</div>
+                  <h3 className={`text-lg font-semibold ${color.textColor} mb-4`}>
+                    {solution.title}
                   </h3>
-                  <p className="text-sm text-muted-foreground">
-                    {pillar.description}
-                  </p>
+                  <ul className="space-y-2">
+                    {solution.features.map((feature, fidx) => (
+                      <li key={fidx} className="flex items-start gap-2 text-sm text-muted-foreground">
+                        <span className="text-primary font-bold">•</span>
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              );
+            })}
+          </div>
+
+          <div className="text-center mt-12">
+            <Link
+              to="/services"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-primary-foreground rounded-lg font-semibold hover:bg-primary/90 transition-colors"
+            >
+              View All Solutions <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Industry Solutions */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
+              Industry Solutions
+            </h2>
+            <div className="h-1 w-24 bg-primary rounded-full"></div>
+          </div>
+
+          <p className="text-lg text-muted-foreground mb-8">
+            We build customized ecosystems for:
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            {industriesList.map((industry, idx) => {
+              const icons = ["🏥", "✈️", "📦", "🏨", "🚚", "🏗️", "🏭"];
+              return (
+                <div
+                  key={idx}
+                  className="bg-gradient-to-br from-primary/10 to-primary/5 rounded-lg p-6 border border-primary/20 hover:border-primary/40 hover:shadow-lg transition-all"
+                >
+                  <div className="text-4xl mb-3">{icons[idx]}</div>
+                  <h3 className="font-semibold text-foreground">{industry}</h3>
                 </div>
               );
             })}
@@ -172,97 +305,114 @@ export default function Index() {
         </div>
       </section>
 
-      {/* Featured Services */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
+      {/* Technology Partners */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-slate-50 to-slate-100">
         <div className="max-w-7xl mx-auto">
           <div className="mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-              Our Services
+              Technology & Integration Partners
             </h2>
             <div className="h-1 w-24 bg-primary rounded-full"></div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-            <div className="bg-gradient-to-br from-white to-primary/5 rounded-lg overflow-hidden border border-border hover:border-primary hover:shadow-lg transition-all">
-              <img src={sustainabilityImg} alt="Sustainability" className="w-full h-48 object-cover" />
-              <div className="p-6">
-                <h3 className="text-lg font-semibold text-foreground mb-3">
-                  Digital Carbon Footprint Assessment
-                </h3>
-                <p className="text-sm text-muted-foreground mb-4">
-                  Comprehensive measurement of carbon emissions from cloud infrastructure, website hosting, and digital product usage.
-                </p>
-                <Link
-                  to="/services"
-                  className="inline-flex items-center gap-2 text-primary font-semibold text-sm hover:gap-3 transition-all"
-                >
-                  Learn More <ArrowRight className="w-4 h-4" />
-                </Link>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+            {partners.map((partner, idx) => (
+              <div
+                key={idx}
+                className="bg-white rounded-lg p-6 border border-border hover:shadow-lg hover:border-primary transition-all text-center"
+              >
+                <p className="font-semibold text-foreground text-sm">{partner}</p>
               </div>
-            </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-            <div className="bg-gradient-to-br from-white to-secondary/5 rounded-lg overflow-hidden border border-border hover:border-secondary hover:shadow-lg transition-all">
-              <img src={cloudImg} alt="Cloud Infrastructure" className="w-full h-48 object-cover" />
-              <div className="p-6">
-                <h3 className="text-lg font-semibold text-foreground mb-3">
-                  Green Cloud Architecture Review
-                </h3>
-                <p className="text-sm text-muted-foreground mb-4">
-                  Technical audits of AWS, Azure, and GCP infrastructure to right-size resources and optimize for both carbon and cost reductions.
-                </p>
-                <Link
-                  to="/services"
-                  className="inline-flex items-center gap-2 text-secondary font-semibold text-sm hover:gap-3 transition-all"
-                >
-                  Learn More <ArrowRight className="w-4 h-4" />
-                </Link>
-              </div>
-            </div>
-
-            <div className="bg-gradient-to-br from-white to-accent/10 rounded-lg overflow-hidden border border-border hover:border-accent hover:shadow-lg transition-all">
-              <img src={tourismImg} alt="Eco-Tourism" className="w-full h-48 object-cover" />
-              <div className="p-6">
-                <h3 className="text-lg font-semibold text-foreground mb-3">
-                  ESG Strategy & Reporting
-                </h3>
-                <p className="text-sm text-muted-foreground mb-4">
-                  Design and implementation of data collection systems aligned with global frameworks for pre-IPO startups and enterprise clients.
-                </p>
-                <Link
-                  to="/services"
-                  className="inline-flex items-center gap-2 text-accent font-semibold text-sm hover:gap-3 transition-all"
-                >
-                  Learn More <ArrowRight className="w-4 h-4" />
-                </Link>
-              </div>
-            </div>
-
-            <div className="bg-gradient-to-br from-white to-primary/5 rounded-lg overflow-hidden border border-border hover:border-primary hover:shadow-lg transition-all">
-              <img src={cloudOpsImg} alt="Cloud Platform Operations" className="w-full h-48 object-cover" />
-              <div className="p-6">
-                <h3 className="text-lg font-semibold text-foreground mb-3">
-                  Cloud Platform Operations
-                </h3>
-                <p className="text-sm text-muted-foreground mb-4">
-                  Implementation and management of AWS and Azure stacks with high-availability distributed systems.
-                </p>
-                <Link
-                  to="/services"
-                  className="inline-flex items-center gap-2 text-primary font-semibold text-sm hover:gap-3 transition-all"
-                >
-                  Learn More <ArrowRight className="w-4 h-4" />
-                </Link>
-              </div>
-            </div>
+      {/* Why Choose DBS */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
+              Why Choose DBS?
+            </h2>
+            <div className="h-1 w-24 bg-primary rounded-full"></div>
           </div>
 
-          <div className="text-center">
-            <Link
-              to="/services"
-              className="inline-flex items-center gap-2 px-6 py-3 border-2 border-primary text-primary rounded-lg font-semibold hover:bg-primary hover:text-primary-foreground transition-colors"
-            >
-              Explore All Services <ArrowRight className="w-4 h-4" />
-            </Link>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+            {whyChoose.map((reason, idx) => (
+              <div
+                key={idx}
+                className="bg-gradient-to-br from-green-50 to-green-100 rounded-lg p-6 border-2 border-green-200 hover:border-green-400 hover:shadow-lg transition-all"
+              >
+                <div className="text-3xl mb-4">
+                  {["🔗", "📈", "📊", "🎯", "🌍"][idx]}
+                </div>
+                <h3 className="text-lg font-semibold text-green-900">{reason}</h3>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Service Flow */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-muted/40 to-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
+              Our Business Service Flow
+            </h2>
+            <div className="h-1 w-24 bg-primary rounded-full"></div>
+            <p className="text-lg text-muted-foreground mt-4">
+              An integrated 7-step ecosystem to transform your business
+            </p>
+          </div>
+
+          <div className="space-y-4">
+            {serviceFlow.map((item, idx) => (
+              <div
+                key={idx}
+                className="border border-border rounded-lg overflow-hidden hover:border-primary transition-colors"
+              >
+                <button
+                  onClick={() => setExpandedStep(expandedStep === idx ? null : idx)}
+                  className="w-full p-6 bg-white hover:bg-muted/50 transition-colors text-left flex items-start justify-between gap-4"
+                >
+                  <div className="flex items-start gap-4 flex-1">
+                    <div className="flex-shrink-0">
+                      <div className="flex items-center justify-center h-12 w-12 rounded-lg bg-primary text-white font-bold text-lg">
+                        {item.step}
+                      </div>
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-xl font-semibold text-foreground mb-1">
+                        {item.title}
+                      </h3>
+                      <p className="text-muted-foreground">{item.description}</p>
+                    </div>
+                  </div>
+                  <div className="flex-shrink-0">
+                    <ArrowRight
+                      className={`w-5 h-5 text-primary transition-transform ${
+                        expandedStep === idx ? "rotate-90" : ""
+                      }`}
+                    />
+                  </div>
+                </button>
+
+                {expandedStep === idx && (
+                  <div className="bg-muted/30 border-t border-border p-6">
+                    <ul className="space-y-3">
+                      {item.details.map((detail, didx) => (
+                        <li key={didx} className="flex items-start gap-3">
+                          <span className="text-primary font-bold text-lg">✓</span>
+                          <span className="text-muted-foreground">{detail}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -308,77 +458,20 @@ export default function Index() {
         </div>
       </section>
 
-      {/* Target Industries */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-blue-50 via-purple-50 to-pink-50">
-        <div className="max-w-7xl mx-auto">
-          <div className="mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-              Industries We Serve
-            </h2>
-            <div className="h-1 w-24 bg-primary rounded-full"></div>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
-            {industries.map((industry, idx) => {
-              const bgColors = [
-                "bg-gradient-to-br from-blue-100 to-blue-50 border-blue-200 hover:border-blue-400",
-                "bg-gradient-to-br from-purple-100 to-purple-50 border-purple-200 hover:border-purple-400",
-                "bg-gradient-to-br from-green-100 to-green-50 border-green-200 hover:border-green-400",
-                "bg-gradient-to-br from-pink-100 to-pink-50 border-pink-200 hover:border-pink-400",
-                "bg-gradient-to-br from-amber-100 to-amber-50 border-amber-200 hover:border-amber-400",
-              ];
-              return (
-                <div
-                  key={idx}
-                  className={`${bgColors[idx]} rounded-lg p-6 border-2 hover:shadow-lg transition-all text-center`}
-                >
-                  <div className="text-5xl mb-3">{industry.icon}</div>
-                  <h3 className="font-semibold text-foreground text-sm">
-                    {industry.name}
-                  </h3>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* SUSTAIN Framework Teaser */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="bg-gradient-to-r from-primary to-secondary rounded-lg p-12 text-white">
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-              The SUSTAIN Framework
-            </h2>
-            <p className="text-lg mb-6 opacity-95">
-              Our proprietary methodology ensures every project—whether an
-              eco-resort or a cloud migration—is executed flawlessly.
-            </p>
-            <Link
-              to="/about"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-white text-primary rounded-lg font-semibold hover:bg-gray-100 transition-colors"
-            >
-              Discover Our Methodology <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-muted/40">
+      {/* Final CTA */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-primary to-primary/90">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-6">
-            Ready to Transform Your Organization?
+          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6">
+            Transform Your Business Today 🚀
           </h2>
-          <p className="text-lg text-muted-foreground mb-8">
-            Let's discuss how our evidence-based approach can drive measurable
-            impact for your business.
+          <p className="text-xl text-white/95 mb-10">
+            Contact us for a customized digital roadmap tailored to your industry and goals.
           </p>
           <Link
             to="/contact"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-primary-foreground rounded-lg font-semibold hover:bg-primary/90 transition-colors"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-white text-primary rounded-lg font-semibold hover:bg-gray-100 transition-colors"
           >
-            Get in Touch <ArrowRight className="w-4 h-4" />
+            Get Started Now <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
       </section>
@@ -423,12 +516,17 @@ export default function Index() {
               <ul className="space-y-2 text-sm">
                 <li>
                   <Link to="/services" className="opacity-75 hover:opacity-100">
-                    Digital Sustainability
+                    Digital Development
                   </Link>
                 </li>
                 <li>
                   <Link to="/services" className="opacity-75 hover:opacity-100">
                     Cloud Solutions
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/services" className="opacity-75 hover:opacity-100">
+                    Security & Compliance
                   </Link>
                 </li>
               </ul>
@@ -441,13 +539,18 @@ export default function Index() {
                     Contact Us
                   </Link>
                 </li>
+                <li>
+                  <Link to="/portfolio" className="opacity-75 hover:opacity-100">
+                    View Portfolio
+                  </Link>
+                </li>
               </ul>
             </div>
           </div>
 
           <div className="border-t border-white/20 pt-8">
             <p className="text-center text-sm opacity-75">
-              © {new Date().getFullYear()} DBS Global Technology & Consultancy Services. All rights
+              © {new Date().getFullYear()} DBS Global Technology & Consulting Services. All rights
               reserved.
             </p>
           </div>
