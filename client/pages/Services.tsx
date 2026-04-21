@@ -67,15 +67,51 @@ export default function Services() {
   ];
 
   const partners = [
-    { name: "Convozen.ai", icon: "🤖" },
-    { name: "Crowdstrike", icon: "🛡️" },
-    { name: "Veeam", icon: "💾" },
-    { name: "ScyllaDB", icon: "🗄️" },
-    { name: "Microsoft", icon: "🪟" },
-    { name: "Binge", icon: "🎬" },
-    { name: "AWS", icon: "☁️" },
-    { name: "Google", icon: "🔍" },
-    { name: "Carayon", icon: "🎯" },
+    {
+      name: "Convozen.ai",
+      logo: "https://convozen.ai/wp-content/uploads/2024/01/convozen-logo.png",
+      fallback: "🤖"
+    },
+    {
+      name: "Crowdstrike",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/CrowdStrike_logo.svg/512px-CrowdStrike_logo.svg.png",
+      fallback: "🛡️"
+    },
+    {
+      name: "Veeam",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Veeam_logo.svg/512px-Veeam_logo.svg.png",
+      fallback: "💾"
+    },
+    {
+      name: "ScyllaDB",
+      logo: "https://www.scylladb.com/wp-content/themes/scylla/images/logo.png",
+      fallback: "🗄️"
+    },
+    {
+      name: "Microsoft",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Microsoft_logo.svg/512px-Microsoft_logo.svg.png",
+      fallback: "🪟"
+    },
+    {
+      name: "Binge",
+      logo: "https://www.binge.com.au/assets/images/binge-logo.png",
+      fallback: "🎬"
+    },
+    {
+      name: "AWS",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Amazon_Web_Services_Logo.svg/512px-Amazon_Web_Services_Logo.svg.png",
+      fallback: "☁️"
+    },
+    {
+      name: "Google",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png",
+      fallback: "🔍"
+    },
+    {
+      name: "Carayon",
+      logo: "https://www.carayon.io/assets/logo.png",
+      fallback: "🎯"
+    },
   ];
 
   const whyChoose = [
@@ -305,9 +341,22 @@ export default function Services() {
             {partners.map((partner, idx) => (
               <div
                 key={idx}
-                className="bg-gradient-to-br from-slate-50 to-slate-100 rounded-lg p-6 border border-border hover:shadow-lg hover:border-primary transition-all text-center"
+                className="bg-white rounded-lg p-6 border border-border hover:shadow-lg hover:border-primary transition-all text-center flex flex-col items-center justify-center gap-4 min-h-[200px]"
               >
-                <div className="text-5xl mb-3">{partner.icon}</div>
+                <div className="relative w-16 h-16 flex items-center justify-center">
+                  <img
+                    src={partner.logo}
+                    alt={partner.name}
+                    className="max-w-full max-h-full object-contain"
+                    onError={(e) => {
+                      e.currentTarget.style.display = "none";
+                      e.currentTarget.nextElementSibling!.style.display = "block";
+                    }}
+                  />
+                  <div className="text-4xl hidden" style={{ display: "none" }}>
+                    {partner.fallback}
+                  </div>
+                </div>
                 <p className="font-semibold text-foreground text-sm">{partner.name}</p>
               </div>
             ))}
