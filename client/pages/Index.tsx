@@ -79,38 +79,48 @@ export default function Index() {
     },
     {
       name: "Veeam",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Veeam_logo.svg/512px-Veeam_logo.svg.png",
+      logo: "https://cdn.builder.io/api/v1/image/assets%2Fa423cbc5fef44250b7d0c574c56be245%2Facbbf48c139c416595fc49fef1d4c3e3?format=webp&width=800&height=1200",
       fallback: "💾"
     },
     {
       name: "ScyllaDB",
-      logo: "https://www.scylladb.com/wp-content/themes/scylla/images/logo.png",
+      logo: "https://cdn.builder.io/api/v1/image/assets%2Fa423cbc5fef44250b7d0c574c56be245%2F0edeb56e6229490ea3a66a497e62bd43?format=webp&width=800&height=1200",
       fallback: "🗄️"
     },
     {
       name: "Microsoft",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Microsoft_logo.svg/512px-Microsoft_logo.svg.png",
+      logo: "https://cdn.builder.io/api/v1/image/assets%2Fa423cbc5fef44250b7d0c574c56be245%2F65accf3e2fd5413ea0388cb9cee03ec4?format=webp&width=800&height=1200",
       fallback: "🪟"
     },
     {
-      name: "Binge",
-      logo: "https://www.binge.com.au/assets/images/binge-logo.png",
+      name: "Bing",
+      logo: "https://cdn.builder.io/api/v1/image/assets%2Fa423cbc5fef44250b7d0c574c56be245%2Ff426e8aefce046208490f4c976686ee3?format=webp&width=800&height=1200",
       fallback: "🎬"
     },
     {
       name: "AWS",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Amazon_Web_Services_Logo.svg/512px-Amazon_Web_Services_Logo.svg.png",
+      logo: "https://cdn.builder.io/api/v1/image/assets%2Fa423cbc5fef44250b7d0c574c56be245%2F80add6a6dcfd4c6cb2c35f87888a4644?format=webp&width=800&height=1200",
       fallback: "☁️"
     },
     {
       name: "Google",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png",
+      logo: "https://cdn.builder.io/api/v1/image/assets%2Fa423cbc5fef44250b7d0c574c56be245%2Fcb4a3a68b52b4aab8ece6d9301b39ba5?format=webp&width=800&height=1200",
       fallback: "🔍"
     },
     {
-      name: "Carayon",
-      logo: "https://www.carayon.io/assets/logo.png",
+      name: "Crayon",
+      logo: "https://cdn.builder.io/api/v1/image/assets%2Fa423cbc5fef44250b7d0c574c56be245%2F3ade12efda18469ba5eef944561c41c3?format=webp&width=800&height=1200",
       fallback: "🎯"
+    },
+    {
+      name: "Snowflake",
+      logo: "https://cdn.builder.io/api/v1/image/assets%2Fa423cbc5fef44250b7d0c574c56be245%2Fc17dd9438cdc46a6a2fe5ccec344bc27?format=webp&width=800&height=1200",
+      fallback: "❄️"
+    },
+    {
+      name: "Datadog",
+      logo: "https://cdn.builder.io/api/v1/image/assets%2Fa423cbc5fef44250b7d0c574c56be245%2F5c92f72fb3964c6fa74cf15e61a02f95?format=webp&width=800&height=1200",
+      fallback: "🐕"
     },
   ];
 
