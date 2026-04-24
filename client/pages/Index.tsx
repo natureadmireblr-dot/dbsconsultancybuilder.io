@@ -1,5 +1,5 @@
 import Navigation from "@/components/Navigation";
-import { ArrowRight, Zap, Cloud, BarChart3, Megaphone, Lock, ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowRight, Zap, Cloud, BarChart3, Megaphone, Lock, ChevronLeft, ChevronRight, Lightbulb, Shield, Zap as ZapIcon } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 
@@ -312,34 +312,127 @@ export default function Index() {
         </div>
       </section>
 
-      {/* About Us Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <div className="mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-              About DBS Global
+      {/* Premium Who We Are Section */}
+      <section className="relative py-32 px-4 sm:px-6 lg:px-8 overflow-hidden">
+        {/* Background with gradient and glow effect */}
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-blue-900/50 to-slate-900"></div>
+
+        {/* Animated background elements */}
+        <div className="absolute top-0 right-0 w-96 h-96 bg-blue-500/10 rounded-full filter blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-purple-500/10 rounded-full filter blur-3xl animate-pulse" style={{ animationDelay: "1s" }}></div>
+
+        <div className="relative max-w-7xl mx-auto z-10">
+          {/* Header */}
+          <div className="text-center mb-20">
+            <h2 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-4 leading-tight">
+              Who We Are
             </h2>
-            <div className="h-1 w-24 bg-primary rounded-full"></div>
+            <p className="text-xl sm:text-2xl text-blue-200 font-light">
+              Driven by innovation. Built on trust.
+            </p>
           </div>
 
-          <div className="space-y-6">
-            <div className="bg-gradient-to-r from-blue-50 to-blue-100 rounded-lg p-8 border border-blue-200">
-              <h3 className="text-xl font-semibold text-foreground mb-4">
-                Who We Are
-              </h3>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                DBS Global Technology & Consulting Services is a comprehensive digital transformation partner delivering scalable, secure, and performance-driven solutions for modern businesses.
-              </p>
+          {/* Main Content Grid */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+            {/* Main Story Card */}
+            <div className="lg:col-span-2">
+              <div className="relative group">
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 opacity-0 group-hover:opacity-100 rounded-2xl blur-xl transition duration-500"></div>
+                <div className="relative bg-white/10 backdrop-blur-xl rounded-2xl p-8 border border-white/20 group-hover:border-blue-400/50 transition duration-500">
+                  <p className="text-lg text-white/90 leading-relaxed mb-6">
+                    DBS Global Technology & Consulting Services is a comprehensive digital transformation partner delivering scalable, secure, and performance-driven solutions for modern businesses. We combine cutting-edge technology with strategic consulting to empower organizations worldwide.
+                  </p>
+                  <p className="text-lg text-white/80 leading-relaxed">
+                    We help organizations across Healthcare, Tourism, FMCG, Hospitality, Transportation, Construction, and Industrial sectors streamline operations, improve customer engagement, and drive measurable growth through AI, cloud infrastructure, and data-driven insights.
+                  </p>
+                </div>
+              </div>
             </div>
 
-            <div className="bg-gradient-to-r from-purple-50 to-purple-100 rounded-lg p-8 border border-purple-200">
-              <h3 className="text-xl font-semibold text-foreground mb-4">
-                Our Expertise
-              </h3>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                We help organizations across Healthcare, Tourism, FMCG, Hospitality, Transportation, Construction, and Industrial sectors streamline operations, improve customer engagement, and drive measurable growth.
-              </p>
+            {/* Core Values */}
+            <div className="space-y-4">
+              <div className="group relative bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20 hover:border-green-400/50 transition duration-500">
+                <div className="flex items-start gap-4">
+                  <div className="p-3 bg-gradient-to-br from-green-400 to-blue-500 rounded-lg flex items-center justify-center">
+                    <Lightbulb className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <h4 className="text-white font-bold mb-1">Innovation</h4>
+                    <p className="text-sm text-white/70">Pioneering solutions</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="group relative bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20 hover:border-blue-400/50 transition duration-500">
+                <div className="flex items-start gap-4">
+                  <div className="p-3 bg-gradient-to-br from-blue-400 to-cyan-500 rounded-lg flex items-center justify-center">
+                    <Shield className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <h4 className="text-white font-bold mb-1">Trust</h4>
+                    <p className="text-sm text-white/70">Security first approach</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="group relative bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20 hover:border-purple-400/50 transition duration-500">
+                <div className="flex items-start gap-4">
+                  <div className="p-3 bg-gradient-to-br from-purple-400 to-pink-500 rounded-lg flex items-center justify-center">
+                    <ZapIcon className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <h4 className="text-white font-bold mb-1">Impact</h4>
+                    <p className="text-sm text-white/70">Measurable results</p>
+                  </div>
+                </div>
+              </div>
             </div>
+          </div>
+
+          {/* Stats Section */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="group relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-blue-600 opacity-0 group-hover:opacity-100 rounded-xl blur-lg transition duration-500"></div>
+              <div className="relative bg-white/10 backdrop-blur-xl rounded-xl p-8 border border-white/20 text-center group-hover:border-blue-400/50 transition duration-500">
+                <div className="text-4xl sm:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400 mb-3">
+                  25+
+                </div>
+                <p className="text-white/80 font-semibold">Years of Experience</p>
+                <p className="text-white/60 text-sm mt-2">Building excellence globally</p>
+              </div>
+            </div>
+
+            <div className="group relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-600 opacity-0 group-hover:opacity-100 rounded-xl blur-lg transition duration-500"></div>
+              <div className="relative bg-white/10 backdrop-blur-xl rounded-xl p-8 border border-white/20 text-center group-hover:border-purple-400/50 transition duration-500">
+                <div className="text-4xl sm:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 mb-3">
+                  500+
+                </div>
+                <p className="text-white/80 font-semibold">Clients Served</p>
+                <p className="text-white/60 text-sm mt-2">Across multiple industries</p>
+              </div>
+            </div>
+
+            <div className="group relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-green-500 to-teal-600 opacity-0 group-hover:opacity-100 rounded-xl blur-lg transition duration-500"></div>
+              <div className="relative bg-white/10 backdrop-blur-xl rounded-xl p-8 border border-white/20 text-center group-hover:border-green-400/50 transition duration-500">
+                <div className="text-4xl sm:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-teal-400 mb-3">
+                  40+
+                </div>
+                <p className="text-white/80 font-semibold">Global Presence</p>
+                <p className="text-white/60 text-sm mt-2">Countries with dedicated teams</p>
+              </div>
+            </div>
+          </div>
+
+          {/* CTA */}
+          <div className="text-center mt-16">
+            <Link
+              to="/contact"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white rounded-lg font-semibold transition duration-300 shadow-lg hover:shadow-blue-500/50"
+            >
+              Learn More About Our Impact <ArrowRight className="w-4 h-4" />
+            </Link>
           </div>
         </div>
       </section>
