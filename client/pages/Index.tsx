@@ -1,10 +1,37 @@
 import Navigation from "@/components/Navigation";
-import { ArrowRight, Zap, Cloud, BarChart3, Megaphone, Lock } from "lucide-react";
+import { ArrowRight, Zap, Cloud, BarChart3, Megaphone, Lock, ChevronLeft, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Index() {
   const [expandedStep, setExpandedStep] = useState<number | null>(null);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  const heroImages = [
+    {
+      url: "https://images.pexels.com/photos/7653473/pexels-photo-7653473.jpeg",
+      alt: "Three colleagues working together on laptops in a bright, modern office space",
+    },
+    {
+      url: "https://images.pexels.com/photos/6804068/pexels-photo-6804068.jpeg",
+      alt: "Team of developers working together on computers in a modern tech office",
+    },
+    {
+      url: "https://images.pexels.com/photos/8441820/pexels-photo-8441820.jpeg",
+      alt: "Consultant discussing financial plans with clients in a modern office setting",
+    },
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % heroImages.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [heroImages.length]);
+
+  const goToImage = (index: number) => {
+    setCurrentImageIndex(index);
+  };
 
   const coreSolutions = [
     {
@@ -207,28 +234,79 @@ export default function Index() {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-primary via-primary/95 to-primary/90">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-primary via-primary/95 to-primary/90">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
-              Empowering Businesses with Smart Digital Transformation
-            </h1>
-            <p className="text-xl sm:text-2xl text-white/95 mb-10 leading-relaxed">
-              End-to-end technology, marketing, and cloud solutions to accelerate growth across industries.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                to="/contact"
-                className="px-8 py-4 bg-white text-primary rounded-lg font-semibold hover:bg-gray-100 transition-colors flex items-center justify-center gap-2"
-              >
-                Get a Free Consultation <ArrowRight className="w-4 h-4" />
-              </Link>
-              <Link
-                to="/portfolio"
-                className="px-8 py-4 bg-transparent border-2 border-white text-white rounded-lg font-semibold hover:bg-white/10 transition-colors"
-              >
-                Explore Solutions
-              </Link>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Left Content */}
+            <div className="text-white">
+              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+                Empowering Businesses with Smart Digital Transformation
+              </h1>
+              <p className="text-xl sm:text-2xl text-white/95 mb-10 leading-relaxed">
+                End-to-end technology, marketing, and cloud solutions to accelerate growth across industries.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link
+                  to="/contact"
+                  className="px-8 py-4 bg-white text-primary rounded-lg font-semibold hover:bg-gray-100 transition-colors flex items-center justify-center gap-2"
+                >
+                  Get a Free Consultation <ArrowRight className="w-4 h-4" />
+                </Link>
+                <Link
+                  to="/portfolio"
+                  className="px-8 py-4 bg-transparent border-2 border-white text-white rounded-lg font-semibold hover:bg-white/10 transition-colors"
+                >
+                  Explore Solutions
+                </Link>
+              </div>
+            </div>
+
+            {/* Right Image Carousel */}
+            <div className="relative">
+              <div className="relative rounded-lg overflow-hidden shadow-2xl">
+                {/* Image */}
+                <img
+                  src={heroImages[currentImageIndex].url}
+                  alt={heroImages[currentImageIndex].alt}
+                  className="w-full h-96 object-cover transition-opacity duration-1000"
+                />
+
+                {/* Dark Overlay */}
+                <div className="absolute inset-0 bg-black/10"></div>
+
+                {/* Navigation Buttons */}
+                <button
+                  onClick={() => goToImage((currentImageIndex - 1 + heroImages.length) % heroImages.length)}
+                  className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 text-white p-2 rounded-full transition-colors z-10"
+                  aria-label="Previous image"
+                >
+                  <ChevronLeft className="w-6 h-6" />
+                </button>
+
+                <button
+                  onClick={() => goToImage((currentImageIndex + 1) % heroImages.length)}
+                  className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 text-white p-2 rounded-full transition-colors z-10"
+                  aria-label="Next image"
+                >
+                  <ChevronRight className="w-6 h-6" />
+                </button>
+
+                {/* Dot Indicators */}
+                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+                  {heroImages.map((_, idx) => (
+                    <button
+                      key={idx}
+                      onClick={() => goToImage(idx)}
+                      className={`w-3 h-3 rounded-full transition-all ${
+                        idx === currentImageIndex
+                          ? "bg-white w-8"
+                          : "bg-white/50 hover:bg-white/75"
+                      }`}
+                      aria-label={`Go to image ${idx + 1}`}
+                    />
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </div>
