@@ -233,78 +233,116 @@ export default function Index() {
     <div className="min-h-screen bg-background">
       <Navigation />
 
-      {/* Hero Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-primary via-primary/95 to-primary/90">
-        <div className="max-w-7xl mx-auto">
+      {/* Premium AI Hero Section */}
+      <section className="relative py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-white via-blue-50 to-white overflow-hidden">
+        {/* Subtle gradient accent bars */}
+        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-blue-500"></div>
+
+        {/* Decorative blobs */}
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-200/30 rounded-full blur-3xl"></div>
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-purple-200/30 rounded-full blur-3xl"></div>
+
+        <div className="relative max-w-7xl mx-auto z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left Content */}
-            <div className="text-white">
-              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-                Empowering Businesses with Smart Digital Transformation
+            <div>
+              <h1 className="text-6xl sm:text-7xl lg:text-8xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-slate-900 via-blue-700 to-slate-900 mb-6 leading-tight">
+                AI That Drives Real Business Growth
               </h1>
-              <p className="text-xl sm:text-2xl text-white/95 mb-10 leading-relaxed">
-                End-to-end technology, marketing, and cloud solutions to accelerate growth across industries.
+              <p className="text-xl text-slate-700 mb-12 leading-relaxed font-light">
+                We simplify operations, optimize decisions, and unlock revenue opportunities through intelligent systems.
               </p>
+
+              {/* Key Benefits */}
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-12">
+                <div className="flex flex-col gap-2">
+                  <div className="text-sm font-bold text-blue-600 uppercase tracking-wider">✓ Revenue Growth</div>
+                  <p className="text-slate-600 text-sm">Increase revenue through AI optimization</p>
+                </div>
+                <div className="flex flex-col gap-2">
+                  <div className="text-sm font-bold text-purple-600 uppercase tracking-wider">✓ Reduce Complexity</div>
+                  <p className="text-slate-600 text-sm">Cut operational costs and simplify workflows</p>
+                </div>
+                <div className="flex flex-col gap-2">
+                  <div className="text-sm font-bold text-blue-600 uppercase tracking-wider">✓ Scale Faster</div>
+                  <p className="text-slate-600 text-sm">Grow efficiently with intelligent automation</p>
+                </div>
+              </div>
+
+              {/* CTAs */}
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
                   to="/contact"
-                  className="px-8 py-4 bg-white text-primary rounded-lg font-semibold hover:bg-gray-100 transition-colors flex items-center justify-center gap-2"
+                  className="px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white rounded-lg font-semibold transition duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-blue-500/50"
                 >
-                  Get a Free Consultation <ArrowRight className="w-4 h-4" />
+                  Get Started <ArrowRight className="w-4 h-4" />
                 </Link>
                 <Link
                   to="/portfolio"
-                  className="px-8 py-4 bg-transparent border-2 border-white text-white rounded-lg font-semibold hover:bg-white/10 transition-colors"
+                  className="px-8 py-4 bg-white border-2 border-slate-300 text-slate-700 rounded-lg font-semibold hover:border-blue-500 hover:text-blue-600 transition duration-300 flex items-center justify-center gap-2"
                 >
-                  Explore Solutions
+                  View Case Studies
                 </Link>
               </div>
             </div>
 
-            {/* Right Image Carousel */}
-            <div className="relative">
-              <div className="relative rounded-lg overflow-hidden shadow-2xl">
-                {/* Image */}
-                <img
-                  src={heroImages[currentImageIndex].url}
-                  alt={heroImages[currentImageIndex].alt}
-                  className="w-full h-96 object-cover transition-opacity duration-1000"
-                />
+            {/* Right Dashboard Visual */}
+            <div className="relative hidden lg:block">
+              <div className="relative bg-gradient-to-br from-slate-50 to-blue-50 rounded-2xl p-1 shadow-2xl border border-blue-100/50">
+                {/* Gradient border effect */}
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-purple-500 opacity-0 group-hover:opacity-10 rounded-2xl transition duration-500"></div>
 
-                {/* Dark Overlay */}
-                <div className="absolute inset-0 bg-black/10"></div>
+                {/* Dashboard Content */}
+                <div className="relative bg-white rounded-2xl p-8 space-y-6">
+                  {/* Header */}
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <h3 className="text-sm font-bold text-slate-900">AI Analytics Dashboard</h3>
+                      <p className="text-xs text-slate-500">Real-time insights</p>
+                    </div>
+                    <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                  </div>
 
-                {/* Navigation Buttons */}
-                <button
-                  onClick={() => goToImage((currentImageIndex - 1 + heroImages.length) % heroImages.length)}
-                  className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 text-white p-2 rounded-full transition-colors z-10"
-                  aria-label="Previous image"
-                >
-                  <ChevronLeft className="w-6 h-6" />
-                </button>
+                  {/* Stats Grid */}
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg p-4 border border-blue-200/50">
+                      <p className="text-xs text-slate-600 mb-2">Revenue Impact</p>
+                      <p className="text-2xl font-bold text-blue-600">+34%</p>
+                    </div>
+                    <div className="bg-gradient-to-br from-purple-50 to-purple-100 rounded-lg p-4 border border-purple-200/50">
+                      <p className="text-xs text-slate-600 mb-2">Efficiency Gain</p>
+                      <p className="text-2xl font-bold text-purple-600">+28%</p>
+                    </div>
+                    <div className="bg-gradient-to-br from-green-50 to-green-100 rounded-lg p-4 border border-green-200/50">
+                      <p className="text-xs text-slate-600 mb-2">Cost Reduction</p>
+                      <p className="text-2xl font-bold text-green-600">-42%</p>
+                    </div>
+                    <div className="bg-gradient-to-br from-orange-50 to-orange-100 rounded-lg p-4 border border-orange-200/50">
+                      <p className="text-xs text-slate-600 mb-2">Time Saved</p>
+                      <p className="text-2xl font-bold text-orange-600">-56%</p>
+                    </div>
+                  </div>
 
-                <button
-                  onClick={() => goToImage((currentImageIndex + 1) % heroImages.length)}
-                  className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 text-white p-2 rounded-full transition-colors z-10"
-                  aria-label="Next image"
-                >
-                  <ChevronRight className="w-6 h-6" />
-                </button>
+                  {/* Chart placeholder */}
+                  <div className="bg-gradient-to-b from-blue-50 to-transparent rounded-lg p-4 border border-blue-100">
+                    <div className="flex items-end justify-between h-20 gap-2">
+                      <div className="flex-1 bg-gradient-to-t from-blue-500 to-blue-400 rounded-t opacity-70" style={{ height: "45%" }}></div>
+                      <div className="flex-1 bg-gradient-to-t from-blue-500 to-blue-400 rounded-t opacity-70" style={{ height: "65%" }}></div>
+                      <div className="flex-1 bg-gradient-to-t from-blue-500 to-blue-400 rounded-t opacity-70" style={{ height: "82%" }}></div>
+                      <div className="flex-1 bg-gradient-to-t from-blue-500 to-blue-400 rounded-t" style={{ height: "100%" }}></div>
+                      <div className="flex-1 bg-gradient-to-t from-purple-500 to-purple-400 rounded-t" style={{ height: "88%" }}></div>
+                    </div>
+                  </div>
 
-                {/* Dot Indicators */}
-                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
-                  {heroImages.map((_, idx) => (
-                    <button
-                      key={idx}
-                      onClick={() => goToImage(idx)}
-                      className={`w-3 h-3 rounded-full transition-all ${
-                        idx === currentImageIndex
-                          ? "bg-white w-8"
-                          : "bg-white/50 hover:bg-white/75"
-                      }`}
-                      aria-label={`Go to image ${idx + 1}`}
-                    />
-                  ))}
+                  {/* Footer */}
+                  <div className="flex items-center justify-between pt-4 border-t border-slate-100">
+                    <p className="text-xs text-slate-500">Updated 2 minutes ago</p>
+                    <div className="flex gap-1">
+                      <div className="w-2 h-2 rounded-full bg-blue-500"></div>
+                      <div className="w-2 h-2 rounded-full bg-purple-500"></div>
+                      <div className="w-2 h-2 rounded-full bg-green-500"></div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
