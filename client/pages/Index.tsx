@@ -475,55 +475,177 @@ export default function Index() {
         </div>
       </section>
 
-      {/* Core Solutions */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-muted/30 to-white">
-        <div className="max-w-7xl mx-auto">
-          <div className="mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
+      {/* Premium Core Solutions */}
+      <section className="relative py-32 px-4 sm:px-6 lg:px-8 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-blue-50"></div>
+
+        {/* Subtle decorative elements */}
+        <div className="absolute top-20 right-0 w-96 h-96 bg-blue-100/30 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 left-0 w-80 h-80 bg-purple-100/20 rounded-full blur-3xl"></div>
+
+        <div className="relative max-w-7xl mx-auto z-10">
+          {/* Header */}
+          <div className="text-center mb-20 max-w-3xl mx-auto">
+            <h2 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-slate-900 mb-6">
               Our Core Solutions
             </h2>
-            <div className="h-1 w-24 bg-primary rounded-full"></div>
+            <p className="text-2xl text-blue-600 font-semibold mb-6">
+              Powering Business Growth Through Intelligent Systems
+            </p>
+            <p className="text-lg text-slate-700 leading-relaxed">
+              We don't just offer services — we build integrated ecosystems that simplify operations, unlock insights, and accelerate revenue.
+            </p>
           </div>
 
+          {/* Solutions Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
-            {coreSolutions.map((solution, idx) => {
-              const colors = [
-                { bg: "bg-blue-50", border: "border-blue-200 hover:border-blue-400", textColor: "text-blue-900" },
-                { bg: "bg-cyan-50", border: "border-cyan-200 hover:border-cyan-400", textColor: "text-cyan-900" },
-                { bg: "bg-green-50", border: "border-green-200 hover:border-green-400", textColor: "text-green-900" },
-                { bg: "bg-orange-50", border: "border-orange-200 hover:border-orange-400", textColor: "text-orange-900" },
-                { bg: "bg-red-50", border: "border-red-200 hover:border-red-400", textColor: "text-red-900" },
-              ];
-              const color = colors[idx];
+            {/* Solution 1 */}
+            <div className="group relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-blue-600 opacity-0 group-hover:opacity-10 rounded-2xl blur-xl transition duration-500"></div>
+              <div className="relative bg-white rounded-2xl p-8 border border-blue-100 hover:border-blue-400 shadow-sm hover:shadow-lg transition duration-500 h-full">
+                <div className="text-4xl mb-4">💻</div>
+                <h3 className="text-xl font-bold text-slate-900 mb-3 flex items-start gap-2">
+                  <span className="text-blue-600 font-black">01</span>
+                  <span>Digital Experience & Development</span>
+                </h3>
+                <p className="text-sm text-slate-700 mb-4 font-semibold">Designing seamless digital platforms that convert and scale.</p>
+                <ul className="space-y-2">
+                  <li className="flex items-start gap-2 text-sm text-slate-600">
+                    <span className="text-blue-500 font-bold">→</span>
+                    Website Design & Development
+                  </li>
+                  <li className="flex items-start gap-2 text-sm text-slate-600">
+                    <span className="text-blue-500 font-bold">→</span>
+                    Mobile Applications (iOS / Android)
+                  </li>
+                  <li className="flex items-start gap-2 text-sm text-slate-600">
+                    <span className="text-blue-500 font-bold">→</span>
+                    UI/UX Experience Design
+                  </li>
+                </ul>
+              </div>
+            </div>
 
-              return (
-                <div
-                  key={idx}
-                  className={`${color.bg} rounded-lg p-6 border-2 ${color.border} hover:shadow-lg transition-all`}
-                >
-                  <div className="text-4xl mb-3">{solution.icon}</div>
-                  <h3 className={`text-lg font-semibold ${color.textColor} mb-4`}>
-                    {solution.title}
-                  </h3>
-                  <ul className="space-y-2">
-                    {solution.features.map((feature, fidx) => (
-                      <li key={fidx} className="flex items-start gap-2 text-sm text-muted-foreground">
-                        <span className="text-primary font-bold">•</span>
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              );
-            })}
+            {/* Solution 2 */}
+            <div className="group relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-cyan-500 to-blue-600 opacity-0 group-hover:opacity-10 rounded-2xl blur-xl transition duration-500"></div>
+              <div className="relative bg-white rounded-2xl p-8 border border-cyan-100 hover:border-cyan-400 shadow-sm hover:shadow-lg transition duration-500 h-full">
+                <div className="text-4xl mb-4">☁️</div>
+                <h3 className="text-xl font-bold text-slate-900 mb-3 flex items-start gap-2">
+                  <span className="text-cyan-600 font-black">02</span>
+                  <span>Cloud & Scalable Infrastructure</span>
+                </h3>
+                <p className="text-sm text-slate-700 mb-4 font-semibold">Building resilient, high-performance systems for modern businesses.</p>
+                <ul className="space-y-2">
+                  <li className="flex items-start gap-2 text-sm text-slate-600">
+                    <span className="text-cyan-500 font-bold">→</span>
+                    Cloud Hosting & Infrastructure
+                  </li>
+                  <li className="flex items-start gap-2 text-sm text-slate-600">
+                    <span className="text-cyan-500 font-bold">→</span>
+                    AWS & Google Cloud Solutions
+                  </li>
+                  <li className="flex items-start gap-2 text-sm text-slate-600">
+                    <span className="text-cyan-500 font-bold">→</span>
+                    Cloud Telephony Systems
+                  </li>
+                  <li className="flex items-start gap-2 text-sm text-slate-600">
+                    <span className="text-cyan-500 font-bold">→</span>
+                    Backup & Disaster Recovery
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Solution 3 */}
+            <div className="group relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-purple-500 to-pink-600 opacity-0 group-hover:opacity-10 rounded-2xl blur-xl transition duration-500"></div>
+              <div className="relative bg-white rounded-2xl p-8 border border-purple-100 hover:border-purple-400 shadow-sm hover:shadow-lg transition duration-500 h-full">
+                <div className="text-4xl mb-4">🤖</div>
+                <h3 className="text-xl font-bold text-slate-900 mb-3 flex items-start gap-2">
+                  <span className="text-purple-600 font-black">03</span>
+                  <span>Data, AI & Intelligence</span>
+                </h3>
+                <p className="text-sm text-slate-700 mb-4 font-semibold">Turning data into decisions and decisions into revenue.</p>
+                <ul className="space-y-2">
+                  <li className="flex items-start gap-2 text-sm text-slate-600">
+                    <span className="text-purple-500 font-bold">→</span>
+                    Data Analytics & Business Intelligence
+                  </li>
+                  <li className="flex items-start gap-2 text-sm text-slate-600">
+                    <span className="text-purple-500 font-bold">→</span>
+                    AI / Machine Learning Solutions
+                  </li>
+                  <li className="flex items-start gap-2 text-sm text-slate-600">
+                    <span className="text-purple-500 font-bold">→</span>
+                    Predictive Insights & Automation
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Solution 4 */}
+            <div className="group relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-green-500 to-teal-600 opacity-0 group-hover:opacity-10 rounded-2xl blur-xl transition duration-500"></div>
+              <div className="relative bg-white rounded-2xl p-8 border border-green-100 hover:border-green-400 shadow-sm hover:shadow-lg transition duration-500 h-full">
+                <div className="text-4xl mb-4">📈</div>
+                <h3 className="text-xl font-bold text-slate-900 mb-3 flex items-start gap-2">
+                  <span className="text-green-600 font-black">04</span>
+                  <span>Marketing & Revenue Growth</span>
+                </h3>
+                <p className="text-sm text-slate-700 mb-4 font-semibold">Driving measurable growth through performance-driven strategies.</p>
+                <ul className="space-y-2">
+                  <li className="flex items-start gap-2 text-sm text-slate-600">
+                    <span className="text-green-500 font-bold">→</span>
+                    Digital & Performance Marketing
+                  </li>
+                  <li className="flex items-start gap-2 text-sm text-slate-600">
+                    <span className="text-green-500 font-bold">→</span>
+                    Lead Generation Systems
+                  </li>
+                  <li className="flex items-start gap-2 text-sm text-slate-600">
+                    <span className="text-green-500 font-bold">→</span>
+                    WhatsApp Automation & Engagement
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Solution 5 */}
+            <div className="group relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-red-500 to-orange-600 opacity-0 group-hover:opacity-10 rounded-2xl blur-xl transition duration-500"></div>
+              <div className="relative bg-white rounded-2xl p-8 border border-red-100 hover:border-red-400 shadow-sm hover:shadow-lg transition duration-500 h-full">
+                <div className="text-4xl mb-4">🛡️</div>
+                <h3 className="text-xl font-bold text-slate-900 mb-3 flex items-start gap-2">
+                  <span className="text-red-600 font-black">05</span>
+                  <span>Security & Trust Framework</span>
+                </h3>
+                <p className="text-sm text-slate-700 mb-4 font-semibold">Ensuring business continuity with enterprise-grade protection.</p>
+                <ul className="space-y-2">
+                  <li className="flex items-start gap-2 text-sm text-slate-600">
+                    <span className="text-red-500 font-bold">→</span>
+                    Cybersecurity Solutions
+                  </li>
+                  <li className="flex items-start gap-2 text-sm text-slate-600">
+                    <span className="text-red-500 font-bold">→</span>
+                    Endpoint Protection
+                  </li>
+                  <li className="flex items-start gap-2 text-sm text-slate-600">
+                    <span className="text-red-500 font-bold">→</span>
+                    Threat Intelligence & Monitoring
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
 
-          <div className="text-center mt-12">
+          {/* CTA */}
+          <div className="text-center mt-16">
             <Link
               to="/services"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-primary-foreground rounded-lg font-semibold hover:bg-primary/90 transition-colors"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white rounded-lg font-semibold transition duration-300 shadow-lg hover:shadow-blue-500/50"
             >
-              View All Solutions <ArrowRight className="w-4 h-4" />
+              Explore All Solutions <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
         </div>
